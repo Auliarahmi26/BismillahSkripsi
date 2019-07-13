@@ -35,7 +35,7 @@
 				  <th>Lokasi Pemasangan</th>
 				  <th>Teks Reklame</th>
 				  <th>TMT</th>
-				  <th></th>
+				  <th>Aksi</th>
 				</tr>
 				</thead>
 				<tbody>
@@ -47,7 +47,7 @@
 					<td>{{ $pendaftaran -> jenis_pendaftaran }}</td>
 					<td>{{ $pendaftaran -> nomor_pendaftaran }}</td>
 					<td>{{ $pendaftaran -> tanggal_pendaftaran }}</td>
-					<td>{{ $pendaftaran -> nama_wajib_pajak }}</td>
+					<td>{{ $pendaftaran -> wajibpajak ['nama_wajib_pajak'] }}</td>
 					<td>{{ $pendaftaran -> nama_perusahaan }}</td>
 					<td>{{ $pendaftaran -> alamat }}</td>
 					<td>{{ $pendaftaran -> lokasi_pemasangan }}</td>

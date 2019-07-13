@@ -12,7 +12,7 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('auth.login');
 });
 
 Auth::routes();
@@ -34,6 +34,20 @@ Route::patch('/edit/{pendaftaran}/pendaftaran','PendaftaranController@update')->
 Route::delete('/hapus/{pendaftaran}/pendaftaran','PendaftaranController@destroy')->name('pendaftaran.destroy');
 Route::get('/pendaftaran-pdf/{pendaftaran}', 'PendaftaranController@pdf')->name('pendaftaran.pdf');
 
+Route::get('/tambah/jenisreklame', 'JenisReklameController@create')->name('jenisreklame.create');
+Route::post('/tambah/jenisreklame', 'JenisReklameController@store')->name('jenisreklame.store');
+Route::get('/data/jenisreklame', 'JenisReklameController@index')->name('jenisreklame.index');
+Route::get('/edit/{jenisreklame}/jenisreklame','JenisReklameController@edit')->name('jenisreklame.edit');
+Route::patch('/edit/{jenisreklame}/jenisreklame','JenisReklameController@update')->name('jenisreklame.update');
+Route::delete('/hapus/{jenisreklame}/jenisreklame','JenisReklameController@destroy')->name('jenisreklame.destroy');
+Route::get('/jenisreklame-pdf/{jenisreklame}', 'JenisReklameController@pdf')->name('jenisreklame.pdf');
+
+
 
 Route::get('/tambah/perhitungankhusus', 'PerhitunganKhususController@create')->name('perhitungankhusus.create');
-Route::post('/tambah/perhitungankhusus', 'PerhitunganKhususController@create')->name('perhitungankhusus.store');
+Route::post('/tambah/perhitungankhusus', 'PerhitunganKhususController@store')->name('perhitungankhusus.store');
+Route::get('/data/perhitungankhusus', 'PerhitunganKhususController@index')->name('perhitungankhusus.index');
+Route::get('/edit/{perhitungankhusus}/perhitungan','PerhitunganKhususController@edit')->name('perhitungankhusus.edit');
+
+
+Route::get('/cari', 'PendaftaranController@loadData');

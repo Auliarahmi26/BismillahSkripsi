@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreatePerhitunganKhususesTable extends Migration
+class CreateJenisReklamesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,8 +13,12 @@ class CreatePerhitunganKhususesTable extends Migration
      */
     public function up()
     {
-        Schema::create('perhitungan_khususes', function (Blueprint $table) {
+        Schema::create('jenis_reklames', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->string('nama_reklame',100);
+            $table->integer('harian');
+            $table->integer('bulanan');
+            $table->integer('tahunan');
             $table->timestamps();
         });
     }
@@ -26,6 +30,6 @@ class CreatePerhitunganKhususesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('perhitungan_khususes');
+        Schema::dropIfExists('jenis_reklames');
     }
 }

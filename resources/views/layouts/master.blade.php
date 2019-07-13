@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>AdminLTE 2 | Modals</title>
+  <title>Pajak Reklame - @yield('title')</title>
   <!-- Tell the browser to be responsive to screen width -->
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
   <!-- Bootstrap 3.3.7 -->
@@ -37,10 +37,11 @@
   <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
   <![endif]-->
 
+
   <!-- Google Font -->
   <link rel="stylesheet"
         href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
-    .example-modal .modal {
+   {{--  .example-modal .modal {
       position: relative;
       top: auto;
       bottom: auto;
@@ -52,7 +53,7 @@
 
     .example-modal .modal {
       background: transparent !important;
-    }
+    } --}}
   </style>
 </head>
 <body class="hold-transition skin-blue sidebar-mini">
@@ -307,6 +308,7 @@
 <script src="../../dist/js/adminlte.min.js"></script>
 <!-- AdminLTE for demo purposes -->
 <script src="../../dist/js/demo.js"></script>
+@yield('script')
 <!-- Page script -->
 <script>
   $(function () {

@@ -42,6 +42,20 @@
 
         <li class="treeview">
           <a href="#">
+            <i class="fa fa-files-o"></i>
+            <span>Jenis Reklame</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+          </a>
+          <ul class="treeview-menu">
+            <li><a href="{{ route('jenisreklame.create') }}"><i class="fa fa-circle-o"></i> Tambah</a></li>
+            <li><a href="{{ route('jenisreklame.index') }}"><i class="fa fa-circle-o"></i> Data Jenis Reklame</a></li>
+          </ul>
+        </li>
+
+        <li class="treeview">
+          <a href="#">
             <i class="fa fa-dashboard"></i> <span>Pendaftaran</span>
             <span class="pull-right-container">
               <i class="fa fa-angle-left pull-right"></i>
@@ -51,41 +65,24 @@
             <li><a href="{{ route('pendaftaran.create') }}"><i class="fa fa-circle-o"></i> Tambah </a> 
             </li>
             <li><a href="{{ route('pendaftaran.index') }}"><i class="fa fa-circle-o"></i> Data Pendaftaran</a></li>
-
-           
           </ul>
         </li>
-        
+
         <li class="treeview">
           <a href="#">
             <i class="fa fa-files-o"></i>
-            <span>Laporan</span>
+            <span>Perhitungan Khusus</span>
             <span class="pull-right-container">
               <i class="fa fa-angle-left pull-right"></i>
             </span>
           </a>
           <ul class="treeview-menu">
-            <li><a href="../layout/top-nav.html"><i class="fa fa-circle-o"></i> Laporan Pendaftaran</a></li>
-            <li><a href="../layout/boxed.html"><i class="fa fa-circle-o"></i> Laporan Pembayaran</a></li>
+            <li><a href="{{ route('perhitungankhusus.create') }}"><i class="fa fa-circle-o"></i> Tambah</a></li>
+            <li><a href="{{ route('perhitungankhusus.index') }}"><i class="fa fa-circle-o"></i> Data Perhitungan Khusus</a></li>
           </ul>
         </li>
-        <li>
-          <a href="../widgets.html">
-            <i class="fa fa-th"></i> <span>Pembayaran</span>
-            <span class="pull-right-container">
-              <small class="label pull-right bg-green"></small>
-            </span>
-          </a>
-        </li>
-
-        <li>
-          <a href="../widgets.html">
-            <i class="fa fa-th"></i> <span>Data Denda</span>
-            <span class="pull-right-container">
-              <small class="label pull-right bg-green"></small>
-            </span>
-          </a>
-        </li>
+        
+        
         
         
      
