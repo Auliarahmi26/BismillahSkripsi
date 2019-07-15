@@ -15,7 +15,7 @@ class CreateJenisReklamesTable extends Migration
     {
         Schema::create('jenis_reklames', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('nama_reklame',100);
+            $table->string('nama_reklame',100)->unique();
             $table->integer('harian');
             $table->integer('bulanan');
             $table->integer('tahunan');

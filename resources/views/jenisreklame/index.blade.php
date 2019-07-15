@@ -1,7 +1,12 @@
-@extends ('layouts.master')
+@extends ('layouts.master')@section('link')
+<!-- DataTables -->
+  <link rel="stylesheet" href="../../bower_components/datatables.net-bs/css/dataTables.bootstrap.min.css">
+@endsection
 @section('title')
 data jenis reklame
 @endsection
+
+
 @section ('content')
 
     <!-- Content Header (Page header) -->
@@ -21,6 +26,7 @@ data jenis reklame
               <h3 class="box-title">Data Table With Full Features</h3>
 
               <a style="margin-left: 5px;" class="btn btn-default pull-right" href="{{ route('wajibpajak.pdf') }}"><i class="fa fa-print"></i></a>
+              <a style="margin-left: 5px;" class="btn btn-primary pull-right" href="{{ route('wajibpajak.create') }}"><i class="fa fa-plus"></i></a>
 
             </div>
             <!-- /.box-header -->
@@ -66,4 +72,23 @@ data jenis reklame
           </div>
           <!-- /.box -->
 
+@endsection
+
+@section('script')
+<!-- DataTables -->
+<script src="../../bower_components/datatables.net/js/jquery.dataTables.min.js"></script>
+<script src="../../bower_components/datatables.net-bs/js/dataTables.bootstrap.min.js"></script>
+<script>
+  $(function () {
+    $('#example1').DataTable()
+    $('#example2').DataTable({
+      'paging'      : true,
+      'lengthChange': false,
+      'searching'   : false,
+      'ordering'    : true,
+      'info'        : true,
+      'autoWidth'   : false
+    })
+  })
+</script>
 @endsection

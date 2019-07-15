@@ -48,6 +48,7 @@ Route::get('/tambah/perhitungankhusus', 'PerhitunganKhususController@create')->n
 Route::post('/tambah/perhitungankhusus', 'PerhitunganKhususController@store')->name('perhitungankhusus.store');
 Route::get('/data/perhitungankhusus', 'PerhitunganKhususController@index')->name('perhitungankhusus.index');
 Route::get('/edit/{perhitungankhusus}/perhitungan','PerhitunganKhususController@edit')->name('perhitungankhusus.edit');
+Route::delete('/hapus/{perhitungankhusus}/perhitungan','PerhitunganKhususController@destroy')->name('perhitungankhusus.destroy');
 
 
 Route::get('/cari', 'PendaftaranController@loadData');

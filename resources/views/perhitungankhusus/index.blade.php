@@ -1,4 +1,9 @@
 @extends ('layouts.master')
+
+@section('link')
+<!-- DataTables -->
+  <link rel="stylesheet" href="../../bower_components/datatables.net-bs/css/dataTables.bootstrap.min.css">
+@endsection
 @section ('content')
 
 
@@ -67,7 +72,7 @@
 					<td width="114px"> <a class="btn btn-success btn-sm" href="{{ route('perhitungankhusus.edit', $perhitungankhusus) }}"><i class="fa fa-info"></i></a>
 					  {{-- gasan delete --}}
 						<div class="pull-right">
-						  <form action="{{-- {{ route('perhitungankhusus.destroy', $perhitungankhusus) }} --}}" method="POST">
+						  <form action="{{ route('perhitungankhusus.destroy', $perhitungankhusus) }}" method="POST">
 							{{ csrf_field() }}
 							{{ method_field('DELETE') }}
 							<button class="btn btn-danger btn-sm" type="submit"><i class="fa fa-trash"></i></button>
@@ -88,4 +93,23 @@
 
 
 
+@endsection
+
+@section('script')
+<!-- DataTables -->
+<script src="../../bower_components/datatables.net/js/jquery.dataTables.min.js"></script>
+<script src="../../bower_components/datatables.net-bs/js/dataTables.bootstrap.min.js"></script>
+<script>
+  $(function () {
+    $('#example1').DataTable()
+    $('#example2').DataTable({
+      'paging'      : true,
+      'lengthChange': false,
+      'searching'   : false,
+      'ordering'    : true,
+      'info'        : true,
+      'autoWidth'   : false
+    })
+  })
+</script>
 @endsection

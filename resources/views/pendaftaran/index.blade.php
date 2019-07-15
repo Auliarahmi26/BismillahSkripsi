@@ -1,4 +1,9 @@
 @extends ('layouts.master')
+
+@section('link')
+<!-- DataTables -->
+  <link rel="stylesheet" href="../../bower_components/datatables.net-bs/css/dataTables.bootstrap.min.css">
+@endsection
 @section ('content')
 
 	<!-- Content Header (Page header) -->
@@ -35,7 +40,7 @@
 				  <th>Lokasi Pemasangan</th>
 				  <th>Teks Reklame</th>
 				  <th>TMT</th>
-				  <th>Aksi</th>
+				  <th width="140">Aksi</th>
 				</tr>
 				</thead>
 				<tbody>
@@ -45,7 +50,7 @@
 				<tr>
 					<td>{{ $no }}</td>
 					<td>{{ $pendaftaran -> jenis_pendaftaran }}</td>
-					<td>{{ $pendaftaran -> nomor_pendaftaran }}</td>
+					<td>973/{{ $pendaftaran -> id }}-UPTPDWIL1/BPPRD/2019</td>
 					<td>{{ $pendaftaran -> tanggal_pendaftaran }}</td>
 					<td>{{ $pendaftaran -> wajibpajak ['nama_wajib_pajak'] }}</td>
 					<td>{{ $pendaftaran -> nama_perusahaan }}</td>
@@ -75,4 +80,23 @@
 		  </div>
 		  <!-- /.box -->
 
+@endsection
+
+@section('script')
+<!-- DataTables -->
+<script src="../../bower_components/datatables.net/js/jquery.dataTables.min.js"></script>
+<script src="../../bower_components/datatables.net-bs/js/dataTables.bootstrap.min.js"></script>
+<script>
+  $(function () {
+    $('#example1').DataTable()
+    $('#example2').DataTable({
+      'paging'      : true,
+      'lengthChange': false,
+      'searching'   : false,
+      'ordering'    : true,
+      'info'        : true,
+      'autoWidth'   : false
+    })
+  })
+</script>
 @endsection

@@ -70,14 +70,14 @@
 
               <div class="box-footer">
                 <button type="submit" class="btn btn-primary">Simpan</button>
-
-                <button type="submit" class="btn btn-danger">Batal</button>
+                <a class="btn btn-danger" href="{{ route('wajibpajak.index') }}">Batal</a>
               </div>
             </form>
+
           </div>
 
 			
-
+ 
           <!-- /.box -->
           </div>
           </div>

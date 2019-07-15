@@ -17,8 +17,8 @@ class CreatePerhitunganKhususesTable extends Migration
             $table->bigIncrements('id');
             $table->string('pendaftaran_id');
             $table->unsignedBigInteger('jenisreklame_id');
-            $table->float('panjang');
-            $table->float('lebar');
+            $table->decimal('panjang', 2,1);
+            $table->decimal('lebar', 2,1);
             $table->integer('sisi');
             $table->integer('buah');
             $table->integer('index_zona_khusus')->default('5');

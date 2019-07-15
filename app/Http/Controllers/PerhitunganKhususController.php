@@ -71,7 +71,7 @@ class PerhitunganKhususController extends Controller
 //fungsi delete
      public function destroy(PerhitunganKhusus $perhitungankhusus)
     {
-        $pendaftaran->delete();
+        $perhitungankhusus->delete();
 
         return redirect()->route('perhitungankhusus.index')->with('success', 'Data berhasil dihapus');
     }
