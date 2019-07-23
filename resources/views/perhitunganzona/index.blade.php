@@ -11,10 +11,10 @@
 	<!-- Content Header (Page header) -->
 	<section class="content-header">
 	  <h1>
-		Perhitungan Khusus
+		Perhitungan Zona
 	  </h1>
 	  <ol class="breadcrumb">
-		<li class="active"><a href=""><i class="fa fa-user"></i> Perhitungan Khusus</a></li>
+		<li class="active"><a href=""><i class="fa fa-user"></i> Perhitungan Zona</a></li>
 	  </ol>
 	</section>
 
@@ -39,7 +39,7 @@
 				  <th>Lebar</th>
 				  <th>Sisi</th>
 				  <th>Buah</th>
-				  <th>Index Zona Khusus</th>
+				  <th>Index Zona</th>
 				  <th>Index Bahan</th>
 				  <th>Biaya</th>
 				  <th>Tarif 25%</th>
@@ -49,36 +49,36 @@
 				</thead>
 				<tbody>
 		<?php $no = 0;?>
-				@foreach( $perhitungankhususes as $perhitungankhusus )
+				@foreach( $perhitunganzonas as $perhitunganzona )
 				@php
 					$total = 0;
-					$total += ($perhitungankhusus['panjang']*$perhitungankhusus['lebar']*$perhitungankhusus['sisi']*$perhitungankhusus['buah']*$perhitungankhusus['index_zona_khusus']*$perhitungankhusus['index_bahan']*$perhitungankhusus['biaya']*($perhitungankhusus['tarif']/100))
+					$total += ($perhitunganzona['panjang']*$perhitunganzona['lebar']*$perhitunganzona['sisi']*$perhitunganzona['buah']*$perhitunganzona['index_zona']*$perhitunganzona['index_bahan']*$perhitunganzona['biaya']*($perhitunganzona['tarif']/100))
 				@endphp
 				
 		<?php $no++ ;?>
 				<tr>
 					<td>{{ $no }}</td>
 					<td>973/{{ $perhitunganzona->pendaftaran ['id'] }}-UPTPDWIL1/BPPRD/2019</td>
-					<td>{{ $perhitungankhusus->jenisreklame['nama_reklame'] }}</td>
-					<td>{{ $perhitungankhusus -> panjang }}</td>
-					<td>{{ $perhitungankhusus -> lebar }}</td>
-					<td>{{ $perhitungankhusus -> sisi }}</td>
-					<td>{{ $perhitungankhusus -> buah }}</td>
-					<td>{{ $perhitungankhusus -> index_zona_khusus }}</td>
-					<td>{{ $perhitungankhusus -> index_bahan}}</td>
-					<td>{{ $perhitungankhusus -> biaya }}</td>
-					<td>{{ $perhitungankhusus -> tarif }}</td>
+					<td>{{ $perhitunganzona->jenisreklame['nama_reklame'] }}</td>
+					<td>{{ $perhitunganzona -> panjang }}</td>
+					<td>{{ $perhitunganzona -> lebar }}</td>
+					<td>{{ $perhitunganzona -> sisi }}</td>
+					<td>{{ $perhitunganzona -> buah }}</td>
+					<td>{{ $perhitunganzona -> index_zona }}</td>
+					<td>{{ $perhitunganzona-> index_bahan}}</td>
+					<td>{{ $perhitunganzona -> biaya }}</td>
+					<td>{{ $perhitunganzona -> tarif }}</td>
 					<td>{{ $total }}</td>
-					<td width="114px"> <a class="btn btn-success btn-sm" href="{{ route('perhitungankhusus.edit', $perhitungankhusus) }}"><i class="fa fa-info"></i></a>
+					<td width="114px"> <a class="btn btn-success btn-sm" href="{{ route('perhitunganzona.edit', $perhitunganzona) }}"><i class="fa fa-info"></i></a>
 					  {{-- gasan delete --}}
 						<div class="pull-right">
-						  <form action="{{ route('perhitungankhusus.destroy', $perhitungankhusus) }}" method="POST">
+						  <form action="{{-- {{ route('perhitunganzona.destroy', $perhitunganzona) }} --}}" method="POST">
 							{{ csrf_field() }}
 							{{ method_field('DELETE') }}
 							<button class="btn btn-danger btn-sm" type="submit"><i class="fa fa-trash"></i></button>
 						  </form>
 						</div>
-						<a class="btn btn-warning btn-sm" href="{{-- {{ route('perhitungankhusus.pdf', $perhitungankhusus) }} --}}"><i class="fa fa-print" ></i></a>
+						<a class="btn btn-warning btn-sm" href="{{ route('perhitunganzona.pdfsatuan', $perhitunganzona) }}"><i class="fa fa-print" ></i></a>
 					</td> 
 
 				</tr>

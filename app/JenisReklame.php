@@ -12,4 +12,9 @@ class JenisReklame extends Model
     {
     	return $this->hasOne('App\PerhitunganKhusus');
     }
+
+    public function perhitunganzona()
+    {
+    	return $this->hasOne('App\PerhitunganZona');
+    }
 }

@@ -38,7 +38,7 @@
                   <th>Nama Perusahaan</th>
                   <th>Alamat</th>
                   <th>No Hp</th>
-                  <th width="140px">Aksi</th>
+                  <th width="85px">Aksi</th>
                 </tr>
                 </thead>
                 <tbody>

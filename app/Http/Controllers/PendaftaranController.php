@@ -22,7 +22,6 @@ class PendaftaranController extends Controller
         $validatedData = $request->validate([
 
         'jenis_pendaftaran' => 'required',
-        'nomor_pendaftaran' => 'required|unique:pendaftarans',
         'tanggal_pendaftaran' => 'required',
         'wajibpajak_id' => 'required',
         'nama_perusahaan' => 'required',
@@ -34,7 +33,6 @@ class PendaftaranController extends Controller
     ]);
     	Pendaftaran::create([
     		'jenis_pendaftaran' =>request('jenis_pendaftaran'),
-    		'nomor_pendaftaran' =>request('nomor_pendaftaran'),
     		'tanggal_pendaftaran' =>request('tanggal_pendaftaran'),
     		'wajibpajak_id' => request('wajibpajak_id'), 
     		'nama_perusahaan' => request('nama_perusahaan'),
@@ -64,7 +62,6 @@ class PendaftaranController extends Controller
     {
         $this->validate(request(), [
         'jenis_pendaftaran' => 'required',
-        'nomor_pendaftaran' => Rule::unique('pendaftarans', 'nomor_pendaftaran')->ignore($pendaftaran->id),
         'tanggal_pendaftaran' => 'required',
         'wajibpajak_id' => 'required',
         'nama_perusahaan' => 'required',
@@ -78,7 +75,6 @@ class PendaftaranController extends Controller
     	$pendaftaran->update([
             'nama_wajib_pajak' => request('nomor_surat'),
             'jenis_pendaftaran' => request('jenis_pendaftaran'),
-            'nomor_pendaftaran' => request('nomor_pendaftaran'),
             'tanggal_pendaftaran' => request('tanggal_pendaftaran'),
             'wajibpajak_id' => request('wajibpajak_id'),
             'nama_perusahaan' => request('nama_perusahaan'),

@@ -7,11 +7,11 @@
           <!-- general form elements -->
           <div class="box box-primary">
             <div class="box-header with-border">
-              <h3 class="box-title">Tambah Data Perhitungan Zona Khusus</h3>
+              <h3 class="box-title">Tambah Data Perhitungan Zona 1,2,3,4</h3>
             </div>
             <!-- /.box-header -->
             <!-- form start -->
-            <form role="form" method="post" action="{{ route('perhitungankhusus.store') }}">
+            <form role="form" method="post" action="{{ route('perhitunganzona.store') }}">
               {{ csrf_field()}}
               <div class="box-body">
                 <div class="row">
@@ -78,8 +78,13 @@
                 </div>
 
                 <div class="form-group">
-                  <label for="exampleInputPassword1">Index Zona Khusus</label>
-                  <input type="text" name="index_zona_khusus" value="5" class="form-control" id="exampleInputPassword1" placeholder="" readonly>
+                  <label for="exampleInputPassword1">Index Zona</label>
+                 <select type="text" name="index_zona" class="form-control" id="exampleInputEmail1" placeholder="">
+                   <option value="3">1</option>
+                   <option value="2">2</option>
+                   <option value="1,5">3</option>
+                   <option value="1">4</option>
+                 </select>
                 </div>
                 
 

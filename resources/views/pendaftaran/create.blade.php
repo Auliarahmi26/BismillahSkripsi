@@ -32,14 +32,7 @@
                  
 
                   <div class="col-md-8">
-                    <div class="form-group {{ $errors->has('nomor_pendaftaran') ? ' has-error' : '' }}">
-                      <label for="exampleInputPassword1">Nomor Pendaftaran</label>
-                      <input type="text" name="nomor_pendaftaran" class="form-control" id="exampleInputPassword1" placeholder="">
-
-                            @if ($errors->has('nomor_pendaftaran'))      
-                                    <span class="help-block">{{ $errors->first('nomor_pendaftaran') }}</span>
-                            @endif
-                    </div>
+                   
                   </div>
                 </div>
 				        <div class="row">

@@ -81,6 +81,20 @@
             <li><a href="{{ route('perhitungankhusus.index') }}"><i class="fa fa-circle-o"></i> Data Perhitungan Khusus</a></li>
           </ul>
         </li>
+
+        <li class="treeview">
+          <a href="#">
+            <i class="fa fa-files-o"></i>
+            <span>Perhitungan Zona</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+          </a>
+          <ul class="treeview-menu">
+            <li><a href="{{ route('perhitunganzona.create') }}"><i class="fa fa-circle-o"></i> Tambah</a></li>
+            <li><a href="{{ route('perhitunganzona.index') }}"><i class="fa fa-circle-o"></i> Data Perhitungan Zona</a></li>
+          </ul>
+        </li>
         
         
         

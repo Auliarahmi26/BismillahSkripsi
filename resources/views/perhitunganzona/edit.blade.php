@@ -3,7 +3,7 @@
 @section('content')
 	@php
 					$total = 0;
-					$total += ($perhitungankhusus['panjang']*$perhitungankhusus['lebar']*$perhitungankhusus['sisi']*$perhitungankhusus['buah']*$perhitungankhusus['index_zona_khusus']*$perhitungankhusus['index_bahan']*$perhitungankhusus['biaya']*($perhitungankhusus['tarif']/100))
+					$total += ($perhitunganzona['panjang']*$perhitunganzona['lebar']*$perhitunganzona['sisi']*$perhitunganzona['buah']*$perhitunganzona['index_zona']*$perhitunganzona['index_bahan']*$perhitunganzona['biaya']*($perhitunganzona['tarif']/100))
 				@endphp
 
 	<div class="panel panel-default">
@@ -22,22 +22,22 @@
 			    	<th colspan="12" style="text-align: center;">PEMBERITAHUAN NILAI PENETAPAN PERHITUNGAN PAJAK REKLAME</th>
 			    </tr>
 			    <tr>
-			    	<th colspan="6">Jenis : {{ $perhitungankhusus->pendaftaran['jenis_pendaftaran'] }} <br> Masa Pajak : xxxx</th>
-			    	<th colspan="6" >Nomor Pendaftaran : {{ $perhitungankhusus->pendaftaran['nomor_pendaftaran'] }} <br>Tanggal Pendaftaran : {{ \Carbon\Carbon::parse($perhitungankhusus -> pendaftaran -> tanggal_pendaftaran)->format('d/m/Y')}}</th>
+			    	<th colspan="6">Jenis : {{ $perhitunganzona->pendaftaran['jenis_pendaftaran'] }} <br> </th>
+			    	<th colspan="6" >Nomor Pendaftaran : 973/{{ $perhitunganzona->pendaftaran ['id'] }}-UPTPDWIL1/BPPRD/2019 <br>Tanggal Pendaftaran : {{ \Carbon\Carbon::parse($perhitunganzona -> pendaftaran -> tanggal_pendaftaran)->format('d/m/Y')}}</th>
 			    </tr>
 			    <tr>
 			    	<th colspan="12" style="text-align: center;">Uraian</th>
 			    </tr>
 			    <tr>
-			    	<th colspan="12">Pajak Reklame An. {{ $perhitungankhusus->pendaftaran->wajibpajak['nama_wajib_pajak'] }}</th>
+			    	<th colspan="12">Pajak Reklame An. {{ $perhitunganzona->pendaftaran->wajibpajak['nama_wajib_pajak'] }}</th>
 			    </tr>
 			    <tr>
 			    	<th colspan="12">
-			    		Nama Perusahaan : {{ $perhitungankhusus->pendaftaran->wajibpajak['nama_perusahaan'] }}  <br>
-			    		Alamat : {{ $perhitungankhusus->pendaftaran['alamat'] }} <br><br><br>
-			    		Lokasi : {{ $perhitungankhusus->pendaftaran['lokasi_pemasangan'] }} <br><br><br>
-			    		Teks : {{ $perhitungankhusus->pendaftaran['teks_reklame'] }} <br><br>
-			    		TMT : {{ $perhitungankhusus->pendaftaran['tmt'] }} <br>
+			    		Nama Perusahaan : {{ $perhitunganzona->pendaftaran->wajibpajak['nama_perusahaan'] }}  <br>
+			    		Alamat : {{ $perhitunganzona->pendaftaran['alamat'] }} <br><br><br>
+			    		Lokasi : {{ $perhitunganzona->pendaftaran['lokasi_pemasangan'] }} <br><br><br>
+			    		Teks : {{ $perhitunganzona->pendaftaran['teks_reklame'] }} <br><br>
+			    		TMT : {{ $perhitunganzona->pendaftaran['tmt'] }} <br>
 			    	</th>
 			    </tr>
 			</thead>
@@ -60,15 +60,15 @@
 					<th>Jumlah</th>
 				</tr>
 				<tr>
-					<th>{{ $perhitungankhusus->jenisreklame['nama_reklame'] }}</th>
-					<th>{{ $perhitungankhusus['panjang'] }}</th>
-					<th>{{ $perhitungankhusus['lebar'] }}</th>
-					<th>{{ $perhitungankhusus['sisi'] }}</th>
-					<th>{{ $perhitungankhusus['buah'] }}</th>
-					<th>{{ $perhitungankhusus['index_zona_khusus'] }}</th>
-					<th>{{ $perhitungankhusus['index_bahan'] }}</th>
-					<th>{{ $perhitungankhusus['biaya'] }}</th>
-					<th>{{ $perhitungankhusus['tarif'] }}</th>
+					<th>{{ $perhitunganzona->jenisreklame['nama_reklame'] }}</th>
+					<th>{{ $perhitunganzona['panjang'] }}</th>
+					<th>{{ $perhitunganzona['lebar'] }}</th>
+					<th>{{ $perhitunganzona['sisi'] }}</th>
+					<th>{{ $perhitunganzona['buah'] }}</th>
+					<th>{{ $perhitunganzona['index_zona_khusus'] }}</th>
+					<th>{{ $perhitunganzona['index_bahan'] }}</th>
+					<th>{{ $perhitunganzona['biaya'] }}</th>
+					<th>{{ $perhitunganzona['tarif'] }}</th>
 					<th>Rp {{$total}}</th>
 				</tr>
 				<tr>

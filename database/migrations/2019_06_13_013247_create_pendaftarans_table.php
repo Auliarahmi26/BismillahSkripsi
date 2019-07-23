@@ -16,7 +16,6 @@ class CreatePendaftaransTable extends Migration
         Schema::create('pendaftarans', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('jenis_pendaftaran');
-            $table->string('nomor_pendaftaran')->unique();
             $table->date('tanggal_pendaftaran');
             $table->unsignedBigInteger('wajibpajak_id');
             $table->string('nama_perusahaan');

@@ -51,4 +51,11 @@ Route::get('/edit/{perhitungankhusus}/perhitungan','PerhitunganKhususController@
 Route::delete('/hapus/{perhitungankhusus}/perhitungan','PerhitunganKhususController@destroy')->name('perhitungankhusus.destroy');
 
 
+Route::get('/tambah/perhitunganzona', 'PerhitunganZonaController@create')->name('perhitunganzona.create');
+Route::post('/tambah/perhitunganzona', 'PerhitunganZonaController@store')->name('perhitunganzona.store');
+Route::get('/data/perhitunganzona', 'PerhitunganZonaController@index')->name('perhitunganzona.index');
+Route::get('/edit/{perhitunganzona}/perhitunganzona','PerhitunganZonaController@edit')->name('perhitunganzona.edit');
+Route::delete('/hapus/{perhitunganzona}/perhitungan','PerhitunganZonaController@destroy')->name('perhitunganZona.destroy');
+Route::get('/perhitunganzona-pdf/{perhitunganzona}', 'PerhitunganZonaController@pdfsatuan')->name('perhitunganzona.pdfsatuan');
+
 Route::get('/cari', 'PendaftaranController@loadData');
