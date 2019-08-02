@@ -2,8 +2,10 @@
 
 @section('content')
 	@php
+	$kali=($perhitungankhusus['masa_pajak']*$perhitungankhusus->jenisreklame['tarif']);
+
 					$total = 0;
-					$total += ($perhitungankhusus['panjang']*$perhitungankhusus['lebar']*$perhitungankhusus['sisi']*$perhitungankhusus['buah']*$perhitungankhusus['index_zona_khusus']*$perhitungankhusus['index_bahan']*$perhitungankhusus['biaya']*($perhitungankhusus['tarif']/100))
+					$total += ($perhitungankhusus['panjang']*$perhitungankhusus['lebar']*$perhitungankhusus['sisi']*$perhitungankhusus['buah']*$perhitungankhusus['index_khusus']*$perhitungankhusus['index_bahan']*$kali*($perhitungankhusus['tarif']/100))
 				@endphp
 
 	<div class="panel panel-default">

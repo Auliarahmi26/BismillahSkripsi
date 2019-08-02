@@ -69,7 +69,7 @@
 					<td>{{ $perhitunganzona -> biaya }}</td>
 					<td>{{ $perhitunganzona -> tarif }}</td>
 					<td>{{ $total }}</td>
-					<td width="114px"> <a class="btn btn-success btn-sm" href="{{ route('perhitunganzona.edit', $perhitunganzona) }}"><i class="fa fa-info"></i></a>
+					<td width="114px"> <a  class="btn btn-success btn-sm" href="{{ route('perhitunganzona.edit', $perhitunganzona) }}"><i class="fa fa-info"></i></a>
 					  {{-- gasan delete --}}
 						<div class="pull-right">
 						  <form action="{{-- {{ route('perhitunganzona.destroy', $perhitunganzona) }} --}}" method="POST">
@@ -78,7 +78,7 @@
 							<button class="btn btn-danger btn-sm" type="submit"><i class="fa fa-trash"></i></button>
 						  </form>
 						</div>
-						<a class="btn btn-warning btn-sm" href="{{ route('perhitunganzona.pdfsatuan', $perhitunganzona) }}"><i class="fa fa-print" ></i></a>
+						<a target="_blank" class="btn btn-warning btn-sm" href="{{ route('perhitunganzona.pdfsatuan', $perhitunganzona) }}"><i class="fa fa-print" ></i></a>
 					</td> 
 
 				</tr>

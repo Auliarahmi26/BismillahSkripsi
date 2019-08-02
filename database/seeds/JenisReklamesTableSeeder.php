@@ -13,95 +13,167 @@ class JenisReklamesTableSeeder extends Seeder
     public function run()
     {
         DB::table('jenis_reklames')->insert([
-           	'nama_reklame' => 'Papan Nama',
-           	'harian' => '1500',
-           	'bulanan' => '20000',
-           	'tahunan' => '200000',
+           	'nama_reklame' => 'Papan Nama Harian',
+           	'tarif' => '1500',
+        ]);
+         DB::table('jenis_reklames')->insert([
+            'nama_reklame' => 'Papan Nama Bulanan',
+            'tarif' => '20000',
+        ]);
+
+         DB::table('jenis_reklames')->insert([
+            'nama_reklame' => 'Papan Nama Tahunan',
+            'tarif' => '200000',
+        ]);
+
+       DB::table('jenis_reklames')->insert([
+            'nama_reklame' => 'Billboard Harian',
+            'tarif' => '4000',
         ]);
 
         DB::table('jenis_reklames')->insert([
-           	'nama_reklame' => 'Billboard',
-           	'harian' => '4000',
-           	'bulanan' => '30000',
-           	'tahunan' => '400000',
+            'nama_reklame' => 'Billboard Bulanan',
+            'tarif' => '30000',
         ]);
 
         DB::table('jenis_reklames')->insert([
-           	'nama_reklame' => 'Neon Box',
-           	'harian' => '4000',
-           	'bulanan' => '30000',
-           	'tahunan' => '400000',
+            'nama_reklame' => 'Billboard Tahunan',
+            'tarif' => '400000',
+        ]);
+
+         DB::table('jenis_reklames')->insert([
+            'nama_reklame' => 'Mini Billboard Harian',
+            'tarif' => '4000',
+        ]);
+
+         DB::table('jenis_reklames')->insert([
+            'nama_reklame' => 'Mini Billboard Bulanan',
+            'tarif' => '30000',
+        ]);
+
+         DB::table('jenis_reklames')->insert([
+            'nama_reklame' => 'Mini Billboard Tahunan',
+            'tarif' => '400000',
+        ]);
+
+         DB::table('jenis_reklames')->insert([
+            'nama_reklame' => 'Neon Box Harian',
+            'tarif' => '4000',
+        ]);
+
+         DB::table('jenis_reklames')->insert([
+            'nama_reklame' => 'Neon Box Bulanan',
+            'tarif' => '30000',
+        ]);
+
+         DB::table('jenis_reklames')->insert([
+            'nama_reklame' => 'Neon Box Tahunan',
+            'tarif' => '400000',
+        ]);
+
+         DB::table('jenis_reklames')->insert([
+            'nama_reklame' => 'Baliho Harian',
+            'tarif' => '4000',
         ]);
 
         DB::table('jenis_reklames')->insert([
-           	'nama_reklame' => 'Baliho',
-           	'harian' => '4000',
-           	'bulanan' => '30000',
-           	'tahunan' => '400000',
+            'nama_reklame' => 'Baliho Bulanan',
+            'tarif' => '30000',
         ]);
 
         DB::table('jenis_reklames')->insert([
-           	'nama_reklame' => 'Mini Billboard',
-           	'harian' => '4000',
-           	'bulanan' => '30000',
-           	'tahunan' => '400000',
+            'nama_reklame' => 'Baliho Tahunan',
+            'tarif' => '400000',
         ]);
 
         DB::table('jenis_reklames')->insert([
-           	'nama_reklame' => 'Megatron',
-           	'harian' => '4000',
-           	'bulanan' => '30000',
-           	'tahunan' => '400000',
+            'nama_reklame' => 'Megatron Harian',
+            'tarif' => '4000',
         ]);
 
         DB::table('jenis_reklames')->insert([
-           	'nama_reklame' => 'Videotron',
-           	'harian' => '4000',
-           	'bulanan' => '30000',
-           	'tahunan' => '400000',
+            'nama_reklame' => 'Megatron Bulanan',
+            'tarif' => '30000',
         ]);
 
         DB::table('jenis_reklames')->insert([
-           	'nama_reklame' => 'LED (Large Electronic Display)',
-           	'harian' => '4000',
-           	'bulanan' => '30000',
-           	'tahunan' => '400000',
+            'nama_reklame' => 'Megatron Tahunan',
+            'tarif' => '400000',
         ]);
 
         DB::table('jenis_reklames')->insert([
-           	'nama_reklame' => 'Umbul-umbul',
-           	'harian' => '2000',
-           	'bulanan' => '30000',
-           	'tahunan' => '300000',
-        ]);
-        
-        DB::table('jenis_reklames')->insert([
-           	'nama_reklame' => 'Spanduk',
-           	'harian' => '2000',
-           	'bulanan' => '30000',
-           	'tahunan' => '300000',
+            'nama_reklame' => 'Videotron Harian',
+            'tarif' => '4000',
         ]);
 
         DB::table('jenis_reklames')->insert([
-           	'nama_reklame' => 'Reklame Berjalan',
-           	'harian' => '2000',
-           	'bulanan' => '24000',
-           	'tahunan' => '200000',
+            'nama_reklame' => 'Videotron Bulanan',
+            'tarif' => '30000',
         ]);
 
         DB::table('jenis_reklames')->insert([
-           	'nama_reklame' => 'Reklame Film atau Slide',
-           	'harian' => '1400',
-           	'bulanan' => '18800',
-           	'tahunan' => '160000',
+            'nama_reklame' => 'Videotron Tahunan',
+            'tarif' => '400000',
         ]);
 
         DB::table('jenis_reklames')->insert([
-           	'nama_reklame' => 'Reklame Apung',
-           	'harian' => '2000',
-           	'bulanan' => '24000',
-           	'tahunan' => '200000',
+            'nama_reklame' => 'LED Harian',
+            'tarif' => '4000',
         ]);
 
+        DB::table('jenis_reklames')->insert([
+            'nama_reklame' => 'LED Bulanan',
+            'tarif' => '30000',
+        ]);
+
+        DB::table('jenis_reklames')->insert([
+            'nama_reklame' => 'LED Tahunan',
+            'tarif' => '400000',
+        ]);
+
+        DB::table('jenis_reklames')->insert([
+            'nama_reklame' => 'Umbul-umbul Harian',
+            'tarif' => '2000',
+        ]);
+
+        DB::table('jenis_reklames')->insert([
+            'nama_reklame' => 'Umbul-umbul Bulanan',
+            'tarif' => '30000',
+        ]);
+
+        DB::table('jenis_reklames')->insert([
+            'nama_reklame' => 'Umbul-umbul Tahunan',
+            'tarif' => '300000',
+        ]);
+
+        DB::table('jenis_reklames')->insert([
+            'nama_reklame' => 'Spanduk Harian',
+            'tarif' => '2000',
+        ]);
+
+        DB::table('jenis_reklames')->insert([
+            'nama_reklame' => 'Spanduk Bulanan',
+            'tarif' => '30000',
+        ]);
+
+        DB::table('jenis_reklames')->insert([
+            'nama_reklame' => 'Spanduk Tahunan',
+            'tarif' => '300000',
+        ]);
+
+        DB::table('jenis_reklames')->insert([
+            'nama_reklame' => 'Banner Harian',
+            'tarif' => '2000',
+        ]);
+
+        DB::table('jenis_reklames')->insert([
+            'nama_reklame' => 'Banner Bulanan',
+            'tarif' => '30000',
+        ]);
+
+        DB::table('jenis_reklames')->insert([
+            'nama_reklame' => 'Banner Tahunan',
+            'tarif' => '300000',
+        ]);
     }
 }

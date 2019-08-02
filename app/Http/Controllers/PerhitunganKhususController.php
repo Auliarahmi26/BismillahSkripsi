@@ -7,6 +7,7 @@ use App\PerhitunganKhusus;
 use App\JenisReklame;
 use App\Pendaftaran;
 use Carbon\Carbon;
+use PDF;
 
 class PerhitunganKhususController extends Controller
 {
@@ -28,7 +29,7 @@ class PerhitunganKhususController extends Controller
     		'buah' => request('buah'),
     		'index_zona_khusus' => request('index_zona_khusus'),
     		'index_bahan' => request('index_bahan'),
-    		'biaya' => request('biaya'),
+    		'masa_pajak' => request('masa_pajak'),
     		'tarif' => request('tarif'),
     	]);
 
@@ -37,7 +38,7 @@ class PerhitunganKhususController extends Controller
 
     public function index()
     {
-    	$perhitungankhususes = PerhitunganKhusus::all();
+    	$perhitungankhususes = PerhitunganKhusus::where('pembayaran', 0)->get();
 
     	return view('perhitungankhusus.index', compact('perhitungankhususes'));
     }
@@ -60,14 +61,19 @@ class PerhitunganKhususController extends Controller
     		'buah' => request('buah'),
     		'index_zona_khusus' => request('index_zona_khusus'),
     		'index_bahan' => request('index_bahan'),
-    		'biaya' => request('biaya'),
+    		'masa_pajak' => request('masa_pajak'),
     		'tarif_25%' => request('tarif_25%'),
 
         ]);
         return redirect()->route('perhitungankhusus.index')->with('success', 'Data berhasil diubah');
     }
 
-
+    public function bayar($id){
+        $perhitungankhusus= PerhitunganKhusus::findOrFail($id);
+        $perhitungankhusus->pembayaran = 1;
+        $perhitungankhusus->update(); 
+        return redirect()->route('pembayarankhusus.index')->with('success', 'Pembayaran Berhasil');
+    }
 //fungsi delete
      public function destroy(PerhitunganKhusus $perhitungankhusus)
     {
@@ -76,10 +82,11 @@ class PerhitunganKhususController extends Controller
         return redirect()->route('perhitungankhusus.index')->with('success', 'Data berhasil dihapus');
     }
 
-    public function pdf(PerhitunganKhusus $perhitungankhusus)
-    {
-        $pdf = PDF::loadView('pendaftaran.tandaterimapendaftaran', compact('pendaftaran'));
-        $pdf->setPaper('a4', 'landscape');
-        return $pdf->download('perhitungankhusus.pdf', compact('perhitungankhusus'));
+    public function pdf($id){
+        $perhitungankhusus= PerhitunganKhusus::findOrFail($id);
+        $pdf = PDF::loadView('perhitungankhusus.pdfsatuan', compact('perhitungankhusus'));
+        $pdf->setPaper('A4', 'landscape');
+        return $pdf->stream();
     }
 }
+   

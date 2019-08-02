@@ -99,8 +99,8 @@ class PendaftaranController extends Controller
     public function pdf(Pendaftaran $pendaftaran)
     {
         $pdf = PDF::loadView('pendaftaran.tandaterimapendaftaran', compact('pendaftaran'));
-        $pdf->setPaper('a5', 'landscape');
-        return $pdf->download('pendaftaran.pdf', compact('pendaftaran'));
+        $pdf->setPaper('a4', 'landscape');
+        return $pdf->stream();
     }
 
 }

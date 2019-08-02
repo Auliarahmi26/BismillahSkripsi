@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateJenisReklamesTable extends Migration
+class CreatePembayaranKhususesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,12 @@ class CreateJenisReklamesTable extends Migration
      */
     public function up()
     {
-        Schema::create('jenis_reklames', function (Blueprint $table) {
+        Schema::create('pembayaran_khususes', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('nama_reklame',100)->unique();
-            $table->integer('tarif');
+            $table->unsignedBigInteger('perhitungankhusus_id');
+            $table->string('status', 20);
             $table->timestamps();
+            $table->foreign('perhitungankhusus_id')->references('id')->on('perhitungan_khususes');
         });
     }
 
@@ -28,6 +29,6 @@ class CreateJenisReklamesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('jenis_reklames');
+        Schema::dropIfExists('pembayaran_khususes');
     }
 }

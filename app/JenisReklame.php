@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class JenisReklame extends Model
 {
-    protected $fillable = ['nama_reklame','harian','bulanan','tahunan'];
+    protected $fillable = ['nama_reklame','tarif'];
 
     public function perhitungankhusus()
     {

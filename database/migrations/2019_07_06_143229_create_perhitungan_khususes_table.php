@@ -23,7 +23,7 @@ class CreatePerhitunganKhususesTable extends Migration
             $table->integer('buah');
             $table->integer('index_zona_khusus')->default('5');
             $table->integer('index_bahan')->default('1');
-            $table->integer('biaya');
+            $table->integer('masa_pajak');
             $table->integer('tarif')->default('25');
             $table->timestamps();
             $table->foreign('jenisreklame_id')->references('id')->on('jenis_reklames');

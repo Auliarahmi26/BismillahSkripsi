@@ -47,7 +47,7 @@
 
                 <div class="form-group {{ $errors->has('alamat') ? ' has-error' : '' }} ">
                   <label for="exampleInputPassword1">Alamat</label>
-                  <input type="text" name="alamat" class="form-control" id="exampleInputPassword1" placeholder="Masukkan Alamat">
+                  <textarea class="form-control" name="alamat" id="" cols="3" rows="3"></textarea>
 
                             @if ($errors->has('alamat'))      
                                     <span class="help-block">{{ $errors->first('alamat') }}</span>

@@ -17,9 +17,7 @@ class JenisreklameController extends Controller
        
     	JenisReklame::create([
     		'nama_reklame' => request('nama_reklame'),
-    		'harian' => request('harian'),
-    		'bulanan' => request('bulanan'),
-    		'tahunan' => request('tahunan'),
+    		'tarif' => request('tarif'),
     	]);
 
     	return redirect()->route('jenisreklame.index')->with('success', 'Data berhasil ditambah');
@@ -42,9 +40,7 @@ class JenisreklameController extends Controller
     {
     	$jenisreklame->update([
             'nama_reklame' => request('nama_reklame'),
-    		'harian' => request('harian'),
-    		'bulanan' => request('bulanan'),
-    		'tahunan' => request('tahunan'),
+    		'tarif' => request('tarif'),
 
     	]);
         return redirect()->route('jenisreklame.index')->with('success', 'Data berhasil diubah');

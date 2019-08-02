@@ -6,15 +6,13 @@
 @endsection
 @section ('content')
 
-
-
 	<!-- Content Header (Page header) -->
 	<section class="content-header">
 	  <h1>
-		Perhitungan Khusus
+		Pembayaran Khusus
 	  </h1>
 	  <ol class="breadcrumb">
-		<li class="active"><a href=""><i class="fa fa-user"></i> Perhitungan Khusus</a></li>
+		<li class="active"><a href=""><i class="fa fa-user"></i> Pembayaran Khusus</a></li>
 	  </ol>
 	</section>
 
@@ -25,7 +23,7 @@
 			  <h3 class="box-title">Data Table With Full Features</h3>
 
 			  <a style="margin-left: 5px;" class="btn btn-default pull-right" href=""><i class="fa fa-print"></i></a>
-
+			  <a style="margin-left: 5px;" class="btn btn-success pull-right" href="{{Route('pembayarankhusus.filter')}}"><i class="fa fa-print"></i> Periode</a>
 			</div>
 			<!-- /.box-header -->
 			<div class="box-body">
@@ -44,7 +42,7 @@
 				  <th>Biaya</th>
 				  <th>Tarif 25%</th>
 				  <th>Total</th>
-				  <th>Status Bayar</th>
+				  <th>Tanggal Bayar</th>
 				  <th>Aksi</th>
 				</tr>
 				</thead>
@@ -70,24 +68,8 @@
 					<td>{{ $perhitungankhusus -> biaya }}</td>
 					<td>{{ $perhitungankhusus -> tarif }}</td>
 					<td>{{ $total }}</td>
-					@if( $perhitungankhusus -> pembayaran == 0 )
-					<td>Belum Dibayar</td>
-					@else
-					<td>Sudah Dibayar</td>
-					@endif
-					<td width="114px"> <a class="btn btn-success btn-sm" href="{{ route('perhitungankhusus.edit', $perhitungankhusus) }}"><i class="fa fa-info"></i></a>
-					  {{-- gasan delete --}}
-						<div class="pull-right">
-						  <form action="{{ route('perhitungankhusus.destroy', $perhitungankhusus) }}" method="POST">
-							{{ csrf_field() }}
-							{{ method_field('DELETE') }}
-							<button class="btn btn-danger btn-sm" type="submit"><i class="fa fa-trash"></i></button>
-						  </form>
-						</div>
-						<a class="btn btn-primary btn-sm" href="{{ route('perhitungankhusus.bayar', $perhitungankhusus->id) }}"><i class="fa fa-check"></i></a>
-						<a class="btn btn-warning btn-sm" href="{{ route('perhitungankhusus.pdf', $perhitungankhusus->id) }}"><i class="fa fa-print" ></i></a>
-					</td> 
-
+					<td>{{ $perhitungankhusus -> updated_at->format('d F Y') }}</td>
+					<td><a class="btn btn-warning btn-sm" href="{{ route('perhitungankhusus.pdf', $perhitungankhusus->id) }}"><i class="fa fa-print" ></i></a></td>
 				</tr>
 				
 				@endforeach

@@ -2,8 +2,10 @@
 
 @section('content')
 	@php
+	$kali=($perhitunganzona['masa_pajak']*$perhitunganzona->jenisreklame['tarif']);
+
 					$total = 0;
-					$total += ($perhitunganzona['panjang']*$perhitunganzona['lebar']*$perhitunganzona['sisi']*$perhitunganzona['buah']*$perhitunganzona['index_zona']*$perhitunganzona['index_bahan']*$perhitunganzona['biaya']*($perhitunganzona['tarif']/100))
+					$total += ($perhitunganzona['panjang']*$perhitunganzona['lebar']*$perhitunganzona['sisi']*$perhitunganzona['buah']*$perhitunganzona['index_zona']*$perhitunganzona['index_bahan']*$kali*($perhitunganzona['tarif']/100))
 				@endphp
 
 	<div class="panel panel-default">
@@ -15,7 +17,7 @@
 			  </tr>
 			  <tr>
 			    <th style="vertical-align: middle; text-align: center;" colspan="4"><img src="{{ asset('img/logo.png') }}" alt=""></th>
-			    <th colspan="4" style="text-align: center;">BADAN PENGOLAHAN PAJAK DAN RETRIBUSI DAERAH <br> UPT PAJAK DAERAH WILAYAH I KOTA BANJARBARU <br> Jl. Mistar Cokrokusumo RT.13 RW.03 Kelurahan Sungai Besar Banjarbaru Kal-Sel <br> Telp. 0511-6749841</th>
+			    <th colspan="4" style="text-align: center;">BADAN PENGELOLAAN PAJAK DAN RETRIBUSI DAERAH <br> UPT PAJAK DAERAH WILAYAH I KOTA BANJARBARU <br> Jl. Mistar Cokrokusumo RT.13 RW.03 Kelurahan Sungai Besar Banjarbaru Kal-Sel <br> Telp. 0511-6749841</th>
 			    <th style="vertical-align: middle; text-align: center;" colspan="4">Tahun Pajak 2019</th>
 			  </tr>
 			    <tr>
@@ -67,7 +69,7 @@
 					<th>{{ $perhitunganzona['buah'] }}</th>
 					<th>{{ $perhitunganzona['index_zona_khusus'] }}</th>
 					<th>{{ $perhitunganzona['index_bahan'] }}</th>
-					<th>{{ $perhitunganzona['biaya'] }}</th>
+					<th>{{ $kali }}</th>
 					<th>{{ $perhitunganzona['tarif'] }}</th>
 					<th>Rp {{$total}}</th>
 				</tr>

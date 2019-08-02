@@ -67,7 +67,7 @@
 							<button class="btn btn-danger btn-sm" type="submit"><i class="fa fa-trash"></i></button>
 						  </form>
 						</div>
-						<a class="btn btn-warning btn-sm" href="{{ route('pendaftaran.pdf', $pendaftaran) }}"><i class="fa fa-print" ></i></a>
+						<a target="_blank" class="btn btn-warning btn-sm" href="{{ route('pendaftaran.pdf', $pendaftaran) }}"><i class="fa fa-print" ></i></a>
 					</td> 
 
 				</tr>

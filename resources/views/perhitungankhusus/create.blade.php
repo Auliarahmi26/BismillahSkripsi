@@ -89,8 +89,8 @@
                 </div>
 
                 <div class="form-group">
-                  <label for="exampleInputPassword1">Biaya</label>
-                  <input type="text" value="" name="biaya" class="form-control" id="exampleInputPassword1" placeholder="">
+                  <label for="exampleInputPassword1">Masa Pajak</label>
+                  <input type="text" value="" name="masa_pajak" class="form-control" id="exampleInputPassword1" placeholder="">
                 </div>
 
                 <div class="form-group">

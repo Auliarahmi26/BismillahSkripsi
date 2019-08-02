@@ -29,7 +29,7 @@ class PerhitunganZonaController extends Controller
     		'buah' => request('buah'),
     		'index_zona' => request('index_zona'),
     		'index_bahan' => request('index_bahan'),
-    		'biaya' => request('biaya'),
+    		'masa_pajak' => request('masa_pajak'),
     		'tarif' => request('tarif'),
     	]);
 
@@ -61,7 +61,7 @@ class PerhitunganZonaController extends Controller
     		'buah' => request('buah'),
     		'index_zona' => request('index_zona'),
     		'index_bahan' => request('index_bahan'),
-    		'biaya' => request('biaya'),
+    		'masa_pajak' => request('masa_pajak'),
     		'tarif_25%' => request('tarif_25%'),
 
         ]);
@@ -79,9 +79,9 @@ class PerhitunganZonaController extends Controller
 
     public function pdfsatuan(PerhitunganZona $perhitunganzona)
     {
-        $pdf = PDF::loadView('perhitunganzona.pdfsatuan', compact('pendaftaran'));
-        $pdf->setPaper('a4', 'landscape');
-        return $pdf->download('perhitunganzona.pdf', compact('perhitunganzona'));
+        $pdf = PDF::loadView('perhitunganzona.pdfsatuan', compact('pendaftaran', 'perhitunganzona'));
+        $pdf->setPaper('A4', 'landscape');
+        return $pdf->stream();
     }
 
 }

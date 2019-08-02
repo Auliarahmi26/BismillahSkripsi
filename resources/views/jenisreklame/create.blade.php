@@ -25,21 +25,8 @@ tambah data jenis reklame
                 </div>
 
                 <div class="form-group">
-                  <label for="exampleInputPassword1">Harian</label>
-                  <input type="text" name="harian" class="form-control" id="exampleInputPassword1" placeholder="">
-
-                </div>
-              
-				
-				<div class="form-group">
-                  <label for="exampleInputPassword1">Bulanan</label>
-                  <input type="text" name="bulanan" class="form-control" id="exampleInputPassword1" placeholder="">
-
-                </div>
-
-                <div class="">
-                  <label for="exampleInputPassword1">Tahunan</label>
-                  <input type="text" name="tahunan" class="form-control" id="exampleInputPassword1" placeholder="">
+                  <label for="exampleInputPassword1">Tarif</label>
+                  <input type="text" name="tarif" class="form-control" id="exampleInputPassword1" placeholder="">
 
                 </div>
 
