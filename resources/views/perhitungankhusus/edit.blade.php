@@ -5,7 +5,7 @@
 	$kali=($perhitungankhusus['masa_pajak']*$perhitungankhusus->jenisreklame['tarif']);
 
 					$total = 0;
-					$total += ($perhitungankhusus['panjang']*$perhitungankhusus['lebar']*$perhitungankhusus['sisi']*$perhitungankhusus['buah']*$perhitungankhusus['index_khusus']*$perhitungankhusus['index_bahan']*$kali*($perhitungankhusus['tarif']/100))
+					$total += ($perhitungankhusus['panjang']*$perhitungankhusus['lebar']*$perhitungankhusus['sisi']*$perhitungankhusus['buah']*$perhitungankhusus['index_zona_khusus']*$perhitungankhusus['index_bahan']*$kali*($perhitungankhusus['tarif']/100))
 				@endphp
 
 	<div class="panel panel-default">
@@ -25,7 +25,7 @@
 			    </tr>
 			    <tr>
 			    	<th colspan="6">Jenis : {{ $perhitungankhusus->pendaftaran['jenis_pendaftaran'] }} <br> Masa Pajak : xxxx</th>
-			    	<th colspan="6" >Nomor Pendaftaran : {{ $perhitungankhusus->pendaftaran['nomor_pendaftaran'] }} <br>Tanggal Pendaftaran : {{ \Carbon\Carbon::parse($perhitungankhusus -> pendaftaran -> tanggal_pendaftaran)->format('d/m/Y')}}</th>
+			    	<th colspan="6" >Nomor Pendaftaran : {{ $perhitungankhusus->pendaftaran['nomor_pendaftaran'] }}  <br>Tanggal Pendaftaran : {{ \Carbon\Carbon::parse($perhitungankhusus -> pendaftaran -> tanggal_pendaftaran)->format('d/m/Y')}}</th>
 			    </tr>
 			    <tr>
 			    	<th colspan="12" style="text-align: center;">Uraian</th>
@@ -69,7 +69,7 @@
 					<th>{{ $perhitungankhusus['buah'] }}</th>
 					<th>{{ $perhitungankhusus['index_zona_khusus'] }}</th>
 					<th>{{ $perhitungankhusus['index_bahan'] }}</th>
-					<th>{{ $perhitungankhusus['biaya'] }}</th>
+					<th>{{ $kali }}</th>
 					<th>{{ $perhitungankhusus['tarif'] }}</th>
 					<th>Rp {{$total}}</th>
 				</tr>
@@ -81,7 +81,7 @@
 			</thead>
 		</table>
 		<div class="col-md-6 col-md-offset-2">
-			<b>Kepala UPT Pajak Daerah <br> Wilayah I <br><br><br><br><br><br><br> Kepala <br> NIP.xxxxx</b>
+			<b>Kepala UPT Pajak Daerah Wilayah I<br>  <br><br><br><br><br><br><br> Kepala <br> NIP.xxxxx</b>
 		</div>
 		<div class="col-md-4">
 			<b>Banjarbaru, {{ $now->format('d M Y') }} <br>	<br> Penanggung Jawab Lapangan <br> Petugas <br><br><br><br><br> Admin</b>

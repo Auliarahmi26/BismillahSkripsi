@@ -25,6 +25,7 @@ class CreatePerhitunganZonasTable extends Migration
             $table->integer('index_bahan')->default('1');
             $table->integer('masa_pajak');
             $table->integer('tarif')->default('25');
+            $table->tinyInteger('pembayaran')->default('0');
             $table->timestamps();
             $table->foreign('jenisreklame_id')->references('id')->on('jenis_reklames');
         });

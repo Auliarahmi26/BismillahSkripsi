@@ -4,22 +4,21 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Pendaftaran;
-use App\PerhitunganKhusus;
+use App\PerhitunganZona;
 use Illuminate\Support\Facades\DB;
 use PDF;
-use App\PembayaranKhusus;
+use App\PembayaranZona;
 
-class PembayaranKhususController extends Controller
+class PembayaranZonaController extends Controller
 {
-   public function create()
+	public function create()
 	{
     		// mengambil data dari table pegawai
 		//$perhitungankhususes = DB::table('perhitungan_khususes')->paginate(10);
-		$pembayarankhususes = PembayaranKhusus::all();
+		$pembayaranzonas = PembayaranZona::all();
 		//dd($perhitungankhususes);
     		// mengirim data pegawai ke view index
-		return view('pembayarankhusus.create', compact('perhitungankhususes'));
-
+		return view('pembayaranzona.create', compact('perhitunganzonas'));
 	}
 
 	public function cari(Request $request)
@@ -28,26 +27,26 @@ class PembayaranKhususController extends Controller
 		$cari = $request->cari;
 
     		// mengambil data dari table pegawai sesuai pencarian data
-		$pembayarankhususes = DB::table('perhitungan_khususes')
+		$pembayaranzona = DB::table('perhitungan_zonas')
 		->where('panjang','like',"%".$cari."%")
 		->paginate();
 
     		// mengirim data pegawai ke view index
-		return view('pembayarankhusus.create', compact('pembayarankhususes'));
+		return view('pembayaranzona.create', compact('pembayaranzona'));
 
 	}
 
 
 	public function index()
 	{
-		$pembayarankhususes = PerhitunganKhusus::where('pembayaran',1)->get();
-		return view('pembayarankhusus.index', compact('pembayarankhususes'));
+		$pembayaranzonas = PerhitunganZona::where('pembayaran',1)->get();
+		return view('pembayaranzona.index', compact('pembayaranzonas'));
 	}
 
 
 	public function filter()
 	{
-		return view('pembayarankhusus.filter');
+		return view('pembayaranzona.filter');
 	}
 
 	 public function filter_cetak(Request $request){
@@ -59,10 +58,8 @@ class PembayaranKhususController extends Controller
 
     public function pdf($id){
         $pembayarankhusus= PerhitunganKhusus::findOrFail($id);
-        $pdf = PDF::loadView('pembayarankhusus.pdfsatuan', compact('pembayarankhusus'));
+        $pdf = PDF::loadView('pembayarankhusus.pdfsatuan', compact('pembayarannkhusus'));
         $pdf->setPaper('A4', 'portrait');
         return $pdf->stream();
     }
-
-
 }

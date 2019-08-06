@@ -49,7 +49,7 @@ Route::post('/tambah/perhitungankhusus', 'PerhitunganKhususController@store')->n
 Route::get('/data/perhitungankhusus', 'PerhitunganKhususController@index')->name('perhitungankhusus.index');
 Route::get('/edit/{perhitungankhusus}/perhitungan','PerhitunganKhususController@edit')->name('perhitungankhusus.edit');
 Route::delete('/hapus/{perhitungankhusus}/perhitungan','PerhitunganKhususController@destroy')->name('perhitungankhusus.destroy');
-Route::get('/bayar/{id}/perhitungan','PerhitunganKhususController@bayar')->name('perhitungankhusus.bayar');
+Route::get('/bayar/{id}/perhitungan-khusus','PerhitunganKhususController@bayar')->name('perhitungankhusus.bayar');
 Route::get('/hapus/{id}/perhitungan','PerhitunganKhususController@pdf')->name('perhitungankhusus.pdf');
 
 
@@ -58,8 +58,10 @@ Route::get('/tambah/perhitunganzona', 'PerhitunganZonaController@create')->name(
 Route::post('/tambah/perhitunganzona', 'PerhitunganZonaController@store')->name('perhitunganzona.store');
 Route::get('/data/perhitunganzona', 'PerhitunganZonaController@index')->name('perhitunganzona.index');
 Route::get('/edit/{perhitunganzona}/perhitunganzona','PerhitunganZonaController@edit')->name('perhitunganzona.edit');
-Route::delete('/hapus/{perhitunganzona}/perhitungan','PerhitunganZonaController@destroy')->name('perhitunganZona.destroy');
+Route::delete('/hapus/{perhitunganzona}/perhitungan-zona','PerhitunganZonaController@destroy')->name('perhitunganzona.destroy');
 Route::get('/perhitunganzona-pdf/{perhitunganzona}', 'PerhitunganZonaController@pdfsatuan')->name('perhitunganzona.pdfsatuan');
+Route::get('/bayar/{id}/perhitungan-zona','PerhitunganZonaController@bayar')->name('perhitunganzona.bayar');
+Route::get('/data/pembayaran-zona', 'PembayaranZonaController@index')->name('pembayaranzona.index');
 
 Route::get('/tambah/pembayarankhusus', 'PembayaranKhususController@create')->name('pembayarankhusus.create');
 Route::post('/tambah/pembayarankhusus', 'PembayaranKhususController@store')->name('pembayarankhusus.store');
@@ -67,3 +69,5 @@ Route::get('/data/pembayarankhusus', 'PembayaranKhususController@index')->name('
 Route::get('/filter/pembayarankhusus', 'PembayaranKhususController@filter')->name('pembayarankhusus.filter');
 Route::post('/filter/pembayarankhusus', 'PembayaranKhususController@filter_cetak')->name('pembayarankhusus.filter_cetak');
 Route::get('/pembayarankhusus/cari','PembayaranKhususController@cari')->name('cari');
+Route::get('/cetak/{id}/pembayaran','PembayaranKhususController@pdf')->name('pembayarankhusus.pdf');
+

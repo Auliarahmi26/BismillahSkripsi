@@ -52,8 +52,10 @@
 		<?php $no = 0;?>
 				@foreach( $perhitungankhususes as $perhitungankhusus )
 				@php
+					$kali=($perhitungankhusus['masa_pajak']*$perhitungankhusus->jenisreklame['tarif']);
+
 					$total = 0;
-					$total += ($perhitungankhusus['panjang']*$perhitungankhusus['lebar']*$perhitungankhusus['sisi']*$perhitungankhusus['buah']*$perhitungankhusus['index_zona_khusus']*$perhitungankhusus['index_bahan']*$perhitungankhusus['biaya']*($perhitungankhusus['tarif']/100))
+					$total += ($perhitungankhusus['panjang']*$perhitungankhusus['lebar']*$perhitungankhusus['sisi']*$perhitungankhusus['buah']*$perhitungankhusus['index_zona_khusus']*$perhitungankhusus['index_bahan']*$kali*($perhitungankhusus['tarif']/100))
 				@endphp
 				
 		<?php $no++ ;?>
@@ -67,7 +69,7 @@
 					<td>{{ $perhitungankhusus -> buah }}</td>
 					<td>{{ $perhitungankhusus -> index_zona_khusus }}</td>
 					<td>{{ $perhitungankhusus -> index_bahan}}</td>
-					<td>{{ $perhitungankhusus -> biaya }}</td>
+					<td>{{ $kali }}</td>
 					<td>{{ $perhitungankhusus -> tarif }}</td>
 					<td>{{ $total }}</td>
 					@if( $perhitungankhusus -> pembayaran == 0 )

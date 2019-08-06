@@ -69,6 +69,14 @@ class PerhitunganZonaController extends Controller
     }
 
 
+    public function bayar($id){
+        $perhitunganzona= PerhitunganZona::findOrFail($id);
+        $perhitunganzona->pembayaran = 1;
+        $perhitunganzona->update(); 
+        return redirect()->route('pembayaranzona.index')->with('success', 'Pembayaran Berhasil');
+    }
+
+
 //fungsi delete
      public function destroy(PerhitunganZona $perhitunganzona)
     {

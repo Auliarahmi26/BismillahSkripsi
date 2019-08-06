@@ -39,15 +39,13 @@
     <form action="{{ route('login') }}" method="post">
       @csrf
       <div class="form-group has-feedback">
-        <input type="email" class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" name="email" placeholder="Email" value="{{ old('email') }}" required autofocus>
-        <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
-
-         @if ($errors->has('email'))
-              <span class="invalid-feedback" role="alert">
-                <strong>{{ $errors->first('email') }}</strong>
-              </span>
-         @endif
-
+        <input type="username" class="form-control" name="username" placeholder="Username">
+        <span class="glyphicon glyphicon-user form-control-feedback"></span>
+        @if ($errors->has('username'))
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $errors->first('username') }}</strong>
+                                    </span>
+                                @endif
       </div>
       <div class="form-group has-feedback">
         <input type="password" class="form-control{{ $errors->has('password') ? ' is-invalid' : '' }}" name="password" placeholder="Password" required>

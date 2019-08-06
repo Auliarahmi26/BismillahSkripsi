@@ -38,7 +38,8 @@ class PerhitunganKhususController extends Controller
 
     public function index()
     {
-    	$perhitungankhususes = PerhitunganKhusus::where('pembayaran', 0)->get();
+    	//$perhitungankhususes = PerhitunganKhusus::where('pembayaran', 0)->get();
+        $perhitungankhususes = PerhitunganKhusus::all();
 
     	return view('perhitungankhusus.index', compact('perhitungankhususes'));
     }
@@ -85,7 +86,7 @@ class PerhitunganKhususController extends Controller
     public function pdf($id){
         $perhitungankhusus= PerhitunganKhusus::findOrFail($id);
         $pdf = PDF::loadView('perhitungankhusus.pdfsatuan', compact('perhitungankhusus'));
-        $pdf->setPaper('A4', 'landscape');
+        $pdf->setPaper('A4', 'portrait');
         return $pdf->stream();
     }
 }

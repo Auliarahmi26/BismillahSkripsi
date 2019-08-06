@@ -87,7 +87,7 @@
 
                  <div class="form-group {{ $errors->has('tmt') ? ' has-error' : '' }}">
                   <label for="exampleInputPassword1">TMT</label>
-                  <input type="text" name="tmt" class="form-control" id="exampleInputPassword1" value="{{ $pendaftaran -> tmt}}" placeholder="">
+                  <input type="text" name="tmt" class="form-control" id="reservation" placeholder="">
 
                             @if ($errors->has('tmt'))      
                                     <span class="help-block">{{ $errors->first('tmt') }}</span>

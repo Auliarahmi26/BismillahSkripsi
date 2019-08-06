@@ -51,9 +51,12 @@
 		<?php $no = 0;?>
 				@foreach( $perhitunganzonas as $perhitunganzona )
 				@php
+					$kali=($perhitunganzona['masa_pajak']*$perhitunganzona->jenisreklame['tarif']);
+
 					$total = 0;
-					$total += ($perhitunganzona['panjang']*$perhitunganzona['lebar']*$perhitunganzona['sisi']*$perhitunganzona['buah']*$perhitunganzona['index_zona']*$perhitunganzona['index_bahan']*$perhitunganzona['biaya']*($perhitunganzona['tarif']/100))
+					$total += ($perhitunganzona['panjang']*$perhitunganzona['lebar']*$perhitunganzona['sisi']*$perhitunganzona['buah']*$perhitunganzona['index_zona']*$perhitunganzona['index_bahan']*$kali*($perhitunganzona['tarif']/100))
 				@endphp
+			
 				
 		<?php $no++ ;?>
 				<tr>
@@ -66,18 +69,24 @@
 					<td>{{ $perhitunganzona -> buah }}</td>
 					<td>{{ $perhitunganzona -> index_zona }}</td>
 					<td>{{ $perhitunganzona-> index_bahan}}</td>
-					<td>{{ $perhitunganzona -> biaya }}</td>
+					<td>{{ $kali }}</td>
 					<td>{{ $perhitunganzona -> tarif }}</td>
 					<td>{{ $total }}</td>
+					@if( $perhitunganzona -> pembayaran == 0 )
+					<td>Belum Dibayar</td>
+					@else
+					<td>Sudah Dibayar</td>
+					@endif
 					<td width="114px"> <a  class="btn btn-success btn-sm" href="{{ route('perhitunganzona.edit', $perhitunganzona) }}"><i class="fa fa-info"></i></a>
 					  {{-- gasan delete --}}
 						<div class="pull-right">
-						  <form action="{{-- {{ route('perhitunganzona.destroy', $perhitunganzona) }} --}}" method="POST">
+						  <form action="{{ route('perhitunganzona.destroy', $perhitunganzona) }}" method="POST">
 							{{ csrf_field() }}
 							{{ method_field('DELETE') }}
 							<button class="btn btn-danger btn-sm" type="submit"><i class="fa fa-trash"></i></button>
 						  </form>
 						</div>
+						<a class="btn btn-primary btn-sm" href="{{ route('perhitunganzona.bayar', $perhitunganzona->id) }}"><i class="fa fa-check"></i></a>
 						<a target="_blank" class="btn btn-warning btn-sm" href="{{ route('perhitunganzona.pdfsatuan', $perhitunganzona) }}"><i class="fa fa-print" ></i></a>
 					</td> 
 
