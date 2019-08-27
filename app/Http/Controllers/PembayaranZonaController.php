@@ -50,15 +50,15 @@ class PembayaranZonaController extends Controller
 	}
 
 	 public function filter_cetak(Request $request){
-   		$pembayaranKhusus = PembayaranKhusus::whereBetween('created_at', [$request->tgl_awal, $request->tgl_akhir])->get();
-        $pdf = PDF::loadView('pembayarankhusus.pdffilter', compact('pembayaranKhusus'));
-        $pdf->setPaper('A4', 'landscape');
+   		$perhitunganzonas  = PerhitunganZona::whereBetween('created_at', [$request->tgl_awal, $request->tgl_akhir])->get();
+        $pdf = PDF::loadView('pembayaranzona.pdffilter', compact('perhitunganzonas'));
+        $pdf->setPaper('F4', 'landscape');
         return $pdf->stream();
     }
 
     public function pdf($id){
-        $pembayarankhusus= PerhitunganKhusus::findOrFail($id);
-        $pdf = PDF::loadView('pembayarankhusus.pdfsatuan', compact('pembayarannkhusus'));
+        $pembayaranzona= PerhitunganZona::findOrFail($id);
+        $pdf = PDF::loadView('pembayaranzona.pdfsatuan', compact('pembayaranzona'));
         $pdf->setPaper('A4', 'portrait');
         return $pdf->stream();
     }

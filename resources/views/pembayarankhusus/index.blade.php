@@ -22,7 +22,7 @@
 			<div class="box-header">
 			  <h3 class="box-title">Data Table With Full Features</h3>
 
-			  <a style="margin-left: 5px;" class="btn btn-default pull-right" href=""><i class="fa fa-print"></i></a>
+			  <a style="margin-left: 5px;" class="btn btn-default pull-right" href="{{ route('pembayarankhusus.pdfall') }}"><i class="fa fa-print"></i></a>
 			  <a style="margin-left: 5px;" class="btn btn-success pull-right" href="{{Route('pembayarankhusus.filter')}}"><i class="fa fa-print"></i> Periode</a>
 			</div>
 			<!-- /.box-header -->
@@ -40,6 +40,7 @@
 				  <th>Index Zona Khusus</th>
 				  <th>Index Bahan</th>
 				  <th>Biaya</th>
+				  <th>Denda</th>
 				  <th>Tarif 25%</th>
 				  <th>Total</th>
 				  <th>Tanggal Bayar</th>
@@ -53,7 +54,7 @@
 					$kali=($perhitungankhusus['masa_pajak']*$perhitungankhusus->jenisreklame['tarif']);
 
 					$total = 0;
-					$total += ($perhitungankhusus['panjang']*$perhitungankhusus['lebar']*$perhitungankhusus['sisi']*$perhitungankhusus['buah']*$perhitungankhusus['index_zona_khusus']*$perhitungankhusus['index_bahan']*$kali*($perhitungankhusus['tarif']/100))
+					$total += ($perhitungankhusus['panjang']*$perhitungankhusus['lebar']*$perhitungankhusus['sisi']*$perhitungankhusus['buah']*$perhitungankhusus['index_zona_khusus']*$perhitungankhusus['index_bahan']*$kali*($perhitungankhusus['tarif']/100)+$perhitungankhusus['denda'])
 				@endphp
 				
 		<?php $no++ ;?>
@@ -68,6 +69,7 @@
 					<td>{{ $perhitungankhusus -> index_zona_khusus }}</td>
 					<td>{{ $perhitungankhusus -> index_bahan}}</td>
 					<td>{{ $kali }}</td>
+					<td>{{ $perhitungankhusus -> denda }}</td>
 					<td>{{ $perhitungankhusus -> tarif }}</td>
 					<td>{{ $total }}</td>
 					<td>{{ $perhitungankhusus -> updated_at->format('d F Y') }}</td>

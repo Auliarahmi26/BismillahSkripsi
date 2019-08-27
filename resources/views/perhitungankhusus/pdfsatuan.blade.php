@@ -13,7 +13,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>UPT Pajak Daerah Wilayah I - Data Pendaftaran</title>
+    <title>UPT Pajak Daerah Wilayah I - Data Perhitungan Khusus</title>
     
       <style>
         body 
@@ -76,6 +76,8 @@
             <td> Alamat </td>
             <td>:{{ $perhitungankhusus->pendaftaran->alamat}}  </td>
         </tr>
+
+
         <tr>    
             <td> Nama Perusahaan </td>
             <td>:{{ $perhitungankhusus->pendaftaran->wajibpajak->nama_perusahaan}}  </td>
@@ -123,25 +125,12 @@
             <td> Rp {{$total}}</td>
             </tr>
             </table>
-    <br>    
+    
     <table style="width: 100%">
-            <tr>
-                    <th colspan="7"></th>
-                    <th colspan="2">Jumlah Yang Harus Dibayar</th>
-                    <th>Rp {{$total}}</th>
-                </tr>
-    </table>
-    <table style="width: 100%">
-    <tr>
-        <td>Kepala UPT Pajak Daerah Wilayah I</td>
-        <td>Petugas</td>
-    </tr>
-     <tr>    <td style="text-align:center; height: 80px;" colspan="2"></td></tr>
-    <tr>
-        <td>Kepala</td>
-        <td>Admin</td>
-    </tr>
-   
+    <h4 style="text-align: right;">NIP. 19680213 198903 1 008</h4>
+    <h4 style="text-align: right;">Muhammad Munadjat, S.AP</h4>
+    <br><br><br>
+    <h4 style="text-align: right;">Kepala UPT Pajak Daerah Wilayah I</h4>
    
 </body>
 </html>

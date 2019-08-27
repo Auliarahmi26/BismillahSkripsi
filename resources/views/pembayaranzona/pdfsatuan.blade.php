@@ -46,10 +46,10 @@
     <h4 style="text-align: center;">SURAT SETORAN PAJAK DAERAH</h4>
 
                 @php
-                    $kali=($pembayarankhusus['masa_pajak']*$pembayarankhusus->jenisreklame['tarif']);
+                    $kali=($pembayaranzona['masa_pajak']*$pembayaranzona->jenisreklame['tarif']);
 
                     $total = 0;
-                    $total += ($pembayarankhusus['panjang']*$pembayarankhusus['lebar']*$pembayarankhusus['sisi']*$pembayarankhusus['buah']*$pembayarankhusus['index_zona_khusus']*$pembayarankhusus['index_bahan']*$kali*($pembayarankhusus['tarif']/100))
+                    $total += ($pembayaranzona['panjang']*$pembayaranzona['lebar']*$pembayaranzona['sisi']*$pembayaranzona['buah']*$pembayaranzona['index_zona']*$pembayaranzona['index_bahan']*$kali*($pembayaranzona['tarif']/100))
                 @endphp
 
     <p>Telah Menerima Pembayaran Pajak Reklame dari :</p>
@@ -58,42 +58,37 @@
         <table style="width: 100%"> 
         <tr>
             <td>Nomor Pendaftaran</td>
-            <td>:973/{{ $pembayarankhusus->pendaftaran ['id'] }}-UPTPDWIL1/BPPRD/2019</td>
+            <td>:973/{{ $pembayaranzona->pendaftaran ['id'] }}-UPTPDWIL1/BPPRD/2019</td>
         </tr>
 
         <tr>    
             <td> Tanggal Pembayaran </td>
-            <td>:{{ $pembayarankhusus -> updated_at->format('d F Y') }}  </td>
+            <td>:{{ $pembayaranzona -> updated_at->format('d F Y') }}  </td>
         </tr>
 
         <tr>    
-            <td> Nama Wajib Pajak</td>
-            <td>:{{$pembayarankhusus->pendaftaran->wajibpajak->nama_wajib_pajak}} </td>
+            <td> Nama Wajib Pajak </td>
+            <td>:{{$pembayaranzona->pendaftaran->wajibpajak->nama_wajib_pajak}} </td>
         </tr>
         
         <tr>    
             <td> Nama Perusahaan </td>
-            <td>:{{ $pembayarankhusus->pendaftaran->wajibpajak->nama_perusahaan}}  </td>
+            <td>:{{ $pembayaranzona->pendaftaran->wajibpajak->nama_perusahaan}}  </td>
         </tr>
        
          <tr>
             <td> Teks Reklame</td>
-            <td>:{{  $pembayarankhusus->pendaftaran->teks_reklame}} </td>
+            <td>:{{  $pembayaranzona->pendaftaran->teks_reklame}} </td>
         </tr>
 
          <tr>
             <td> Jenis Reklame </td>
-            <td>:{{$pembayarankhusus->jenisreklame->nama_reklame}} </td>
+            <td>:{{$pembayaranzona->jenisreklame->nama_reklame}} </td>
         </tr>
 
          <tr>
             <td> TMT</td>
-            <td>:{{ $pembayarankhusus->pendaftaran->tmt}} </td>
-        </tr>
-
-        <tr>
-            <td>Denda</td>
-            <td>:Rp {{ $pembayarankhusus -> denda }}</td>
+            <td>:{{ $pembayaranzona->pendaftaran->tmt}} </td>
         </tr>
 
         <tr>
@@ -105,7 +100,6 @@
     <h4 style="text-align: right;">Petugas Yang Menerima</h4>
     <br><br>
     <h4 style="text-align: right;">Gusti Shinta Fitriana, S.AP</h4>
-
 
    
     

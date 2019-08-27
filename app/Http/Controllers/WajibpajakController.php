@@ -54,8 +54,8 @@ class WajibpajakController extends Controller
     {
         $this->validate(request(), [
         'nama_wajib_pajak' => 'required|max:25',
-        'no_ktp' => 'required|min:16|max:16',
-        'nama_perusahaan' => 'required|max:25',
+        'no_ktp' => 'required|min:16|max:20',
+        'nama_perusahaan' => 'required|max:100',
         'alamat' => 'required',
         'no_hp' => 'required|max:13',
         ]);
@@ -83,7 +83,7 @@ class WajibpajakController extends Controller
         $wajibpajaks = WajibPajak::all();
         $pdf = PDF::loadView('wajibpajak.datawajibpajak', compact('wajibpajaks'));
         $pdf->setPaper('a4', 'landscape');
-        return $pdf->download('wajibpajak.pdf', compact('wajibpajaks'));
+        return $pdf->stream();
     }
 
 }

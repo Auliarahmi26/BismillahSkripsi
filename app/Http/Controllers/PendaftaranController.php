@@ -54,8 +54,8 @@ class PendaftaranController extends Controller
 
      public function edit(Pendaftaran $pendaftaran)
     {
-
-        return view('pendaftaran.edit', compact('pendaftaran'));
+        $wajibpajaks = Wajibpajak::all();
+        return view('pendaftaran.edit', compact('pendaftaran', 'wajibpajaks'));
     }
 
     public function update(Pendaftaran $pendaftaran)

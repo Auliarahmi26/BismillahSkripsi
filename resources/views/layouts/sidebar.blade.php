@@ -40,7 +40,7 @@
           </ul>
         </li>
 
-        <li class="treeview">
+       {{--  <li class="treeview">
           <a href="#">
             <i class="fa fa-files-o"></i>
             <span>Jenis Reklame</span>
@@ -52,7 +52,7 @@
             <li><a href="{{ route('jenisreklame.create') }}"><i class="fa fa-circle-o"></i> Tambah</a></li>
             <li><a href="{{ route('jenisreklame.index') }}"><i class="fa fa-circle-o"></i> Data Jenis Reklame</a></li>
           </ul>
-        </li>
+        </li> --}}
 
         <li class="treeview">
           <a href="#">
@@ -118,7 +118,7 @@
             </span>
           </a>
           <ul class="treeview-menu">
-            <li><a href=""><i class="fa fa-circle-o"></i> Data Pembayaran Zona</a></li>
+            <li><a href="{{ route('pembayaranzona.index') }}"><i class="fa fa-circle-o"></i> Data Pembayaran Zona</a></li>
           </ul>
         </li>    
     </section>

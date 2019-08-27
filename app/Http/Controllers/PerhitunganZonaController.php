@@ -70,8 +70,22 @@ class PerhitunganZonaController extends Controller
 
 
     public function bayar($id){
-        $perhitunganzona= PerhitunganZona::findOrFail($id);
+       $perhitunganzona= PerhitunganZona::findOrFail($id);
+        $kali=($perhitunganzona['masa_pajak']*$perhitunganzona->jenisreklame['tarif']);
+
+        $total = 0;
+        $total += ($perhitunganzona['panjang']*$perhitunganzona['lebar']*$perhitunganzona['sisi']*$perhitunganzona['buah']*$perhitunganzona['index_zona_zona']*$perhitunganzona['index_bahan']*$kali*($perhitunganzona['tarif']/100));
+
+        $masa = $perhitunganzona->created_at;
+        $TanggalSekarang = Carbon::now();
+        $selisih = $masa->diffInDays($TanggalSekarang);
+        if($selisih >= 30){
+            $denda = $total*2/100;
+        }else{
+            $denda = 0;
+        }
         $perhitunganzona->pembayaran = 1;
+        $perhitunganzona->denda = $denda;
         $perhitunganzona->update(); 
         return redirect()->route('pembayaranzona.index')->with('success', 'Pembayaran Berhasil');
     }
@@ -88,7 +102,7 @@ class PerhitunganZonaController extends Controller
     public function pdfsatuan(PerhitunganZona $perhitunganzona)
     {
         $pdf = PDF::loadView('perhitunganzona.pdfsatuan', compact('pendaftaran', 'perhitunganzona'));
-        $pdf->setPaper('A4', 'landscape');
+        $pdf->setPaper('A4', 'portrait');
         return $pdf->stream();
     }
 

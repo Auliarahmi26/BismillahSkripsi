@@ -51,9 +51,9 @@ class PembayaranKhususController extends Controller
 	}
 
 	 public function filter_cetak(Request $request){
-   		$pembayaranKhusus = PembayaranKhusus::whereBetween('created_at', [$request->tgl_awal, $request->tgl_akhir])->get();
-        $pdf = PDF::loadView('pembayarankhusus.pdffilter', compact('pembayaranKhusus'));
-        $pdf->setPaper('A4', 'landscape');
+   		$perhitunganKhusus = PerhitunganKhusus::whereBetween('created_at', [$request->tgl_awal, $request->tgl_akhir])->get();
+        $pdf = PDF::loadView('pembayarankhusus.pdffilter', compact('perhitunganKhusus'));
+        $pdf->setPaper('F4', 'landscape');
         return $pdf->stream();
     }
 
@@ -63,6 +63,16 @@ class PembayaranKhususController extends Controller
         $pdf->setPaper('A4', 'portrait');
         return $pdf->stream();
     }
+
+    public function pdfall()
+    {
+        $perhitunganKhususes = PerhitunganKhusus::all();
+        $pdf = PDF::loadView('pembayarankhusus.pdfall', compact('perhitunganKhususes'));
+        $pdf->setPaper('a4', 'landscape');
+        return $pdf->stream();
+    }
+
+     
 
 
 }

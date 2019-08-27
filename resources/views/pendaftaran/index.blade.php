@@ -40,7 +40,7 @@
 				  <th>Lokasi Pemasangan</th>
 				  <th>Teks Reklame</th>
 				  <th>TMT</th>
-				  <th width="140">Aksi</th>
+				  <th width="80">Aksi</th>
 				</tr>
 				</thead>
 				<tbody>
@@ -67,7 +67,7 @@
 							<button class="btn btn-danger btn-sm" type="submit"><i class="fa fa-trash"></i></button>
 						  </form>
 						</div>
-						<a target="_blank" class="btn btn-warning btn-sm" href="{{ route('pendaftaran.pdf', $pendaftaran) }}"><i class="fa fa-print" ></i></a>
+						<a target="_blank" class="btn btn-default btn-sm" href="{{ route('pendaftaran.pdf', $pendaftaran) }}"><i class="fa fa-print" ></i></a>
 					</td> 
 
 				</tr>

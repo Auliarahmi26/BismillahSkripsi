@@ -85,7 +85,7 @@
 
         <table align="right" style="width: 80%">
             <tr>
-                <th colspan="10" width="60%" align="right">Petugas Yang Menerima <br> <br> <br> <br> <br> -------------------------------------</th>
+                <th colspan="10" width="60%" align="right">Petugas Yang Menerima <br> <br> <br> <br> <br> Gusti Shinta Fitriana, S.AP <br>NIP. 19830423 200701 2 002</th>
             </tr>
 
         </table>

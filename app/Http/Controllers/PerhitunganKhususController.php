@@ -20,18 +20,21 @@ class PerhitunganKhususController extends Controller
 
     public function store()
     {
-    	PerhitunganKhusus::create([
-    		'pendaftaran_id' =>request('pendaftaran_id'),
-    		'jenisreklame_id' =>request('jenisreklame_id'),
-    		'panjang' =>request('panjang'),
-    		'lebar' => request('lebar'), 
-    		'sisi' => request('sisi'),
-    		'buah' => request('buah'),
-    		'index_zona_khusus' => request('index_zona_khusus'),
-    		'index_bahan' => request('index_bahan'),
-    		'masa_pajak' => request('masa_pajak'),
-    		'tarif' => request('tarif'),
-    	]);
+
+        $perhitungankhusus = new PerhitunganKhusus();
+
+    		$perhitungankhusus->pendaftaran_id = request('pendaftaran_id');
+    		$perhitungankhusus->jenisreklame_id = request('jenisreklame_id');
+    		$perhitungankhusus->panjang = request('panjang');
+    		$perhitungankhusus->lebar = request('lebar');
+    		$perhitungankhusus->sisi = request('sisi');
+    		$perhitungankhusus->buah = request('buah');
+    		$perhitungankhusus->index_zona_khusus = request('index_zona_khusus');
+    		$perhitungankhusus->index_bahan = request('index_bahan');
+    		$perhitungankhusus->masa_pajak = request('masa_pajak');
+    		$perhitungankhusus->tarif = request('tarif');
+            $perhitungankhusus->save();
+
 
     	return redirect()->route('perhitungankhusus.index')->with('success', 'Data berhasil ditambah');
     }
@@ -71,7 +74,21 @@ class PerhitunganKhususController extends Controller
 
     public function bayar($id){
         $perhitungankhusus= PerhitunganKhusus::findOrFail($id);
+        $kali=($perhitungankhusus['masa_pajak']*$perhitungankhusus->jenisreklame['tarif']);
+
+        $total = 0;
+        $total += ($perhitungankhusus['panjang']*$perhitungankhusus['lebar']*$perhitungankhusus['sisi']*$perhitungankhusus['buah']*$perhitungankhusus['index_zona_khusus']*$perhitungankhusus['index_bahan']*$kali*($perhitungankhusus['tarif']/100));
+
+        $masa = $perhitungankhusus->created_at;
+        $TanggalSekarang = Carbon::now();
+        $selisih = $masa->diffInDays($TanggalSekarang);
+        if($selisih >= 30){
+            $denda = $total*2/100;
+        }else{
+            $denda = 0;
+        }
         $perhitungankhusus->pembayaran = 1;
+        $perhitungankhusus->denda = $denda;
         $perhitungankhusus->update(); 
         return redirect()->route('pembayarankhusus.index')->with('success', 'Pembayaran Berhasil');
     }
@@ -89,5 +106,7 @@ class PerhitunganKhususController extends Controller
         $pdf->setPaper('A4', 'portrait');
         return $pdf->stream();
     }
+
+
 }
    

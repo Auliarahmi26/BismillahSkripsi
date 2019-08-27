@@ -24,7 +24,8 @@
 			<div class="box-header">
 			  <h3 class="box-title">Data Table With Full Features</h3>
 
-			  <a style="margin-left: 5px;" class="btn btn-default pull-right" href=""><i class="fa fa-print"></i></a>
+			   
+			  <a style="margin-left: 5px;" class="btn btn-success pull-right" href="{{Route('pembayaranzona.filter')}}"><i class="fa fa-print"></i> Periode</a>
 
 			</div>
 			<!-- /.box-header -->
@@ -42,6 +43,7 @@
 				  <th>Index Zona</th>
 				  <th>Index Bahan</th>
 				  <th>Biaya</th>
+				  <th>Denda</th>
 				  <th>Tarif 25%</th>
 				  <th>Total</th>
 				  <th>Tgl Bayar</th>
@@ -53,9 +55,8 @@
 				@foreach( $pembayaranzonas as $perhitunganzona )
 				@php
 					$kali=($perhitunganzona['masa_pajak']*$perhitunganzona->jenisreklame['tarif']);
-
 					$total = 0;
-					$total += ($perhitunganzona['panjang']*$perhitunganzona['lebar']*$perhitunganzona['sisi']*$perhitunganzona['buah']*$perhitunganzona['index_zona']*$perhitunganzona['index_bahan']*$kali*($perhitunganzona['tarif']/100))
+					$total += ($perhitunganzona['panjang']*$perhitunganzona['lebar']*$perhitunganzona['sisi']*$perhitunganzona['buah']*$perhitunganzona['index_zona']*$perhitunganzona['index_bahan']*$kali*($perhitunganzona['tarif']/100)+$perhitunganzona['denda'])
 				@endphp
 			
 				
@@ -71,10 +72,11 @@
 					<td>{{ $perhitunganzona -> index_zona }}</td>
 					<td>{{ $perhitunganzona-> index_bahan}}</td>
 					<td>{{ $kali }}</td>
+					<td>{{ $perhitunganzona -> denda }}</td>
 					<td>{{ $perhitunganzona -> tarif }}</td>
 					<td>{{ $total }}</td>
 					<td>{{ $perhitunganzona -> updated_at->format('d F Y') }}</td>
-					<td><a class="btn btn-warning btn-sm" href="{{-- {{ route('pembayaranzona.pdf', $perhitunganzona->id) }} --}}"><i class="fa fa-print" ></i></a></td>
+					<td><a class="btn btn-warning btn-sm" href="{{ route('pembayaranzona.pdf', $perhitunganzona) }}"><i class="fa fa-print" ></i></a></td>
 				</tr>
 				
 				@endforeach
