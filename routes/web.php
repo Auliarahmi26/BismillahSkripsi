@@ -51,6 +51,7 @@ Route::get('/edit/{perhitungankhusus}/perhitungan','PerhitunganKhususController@
 Route::delete('/hapus/{perhitungankhusus}/perhitungan','PerhitunganKhususController@destroy')->name('perhitungankhusus.destroy');
 Route::get('/bayar/{id}/perhitungan-khusus','PerhitunganKhususController@bayar')->name('perhitungankhusus.bayar');
 Route::get('/hapus/{id}/perhitungan','PerhitunganKhususController@pdf')->name('perhitungankhusus.pdf');
+Route::get('/cetak-data-perhitungan-khusus','PerhitunganKhususController@pdfall')->name('perhitungankhusus.pdfall');
 
 
 
@@ -74,6 +75,6 @@ Route::get('/filter/pembayarankhusus', 'PembayaranKhususController@filter')->nam
 Route::post('/filter/pembayarankhusus', 'PembayaranKhususController@filter_cetak')->name('pembayarankhusus.filter_cetak');
 Route::get('/pembayarankhusus/cari','PembayaranKhususController@cari')->name('cari');
 Route::get('/cetak/{pembayarankhusus}','PembayaranKhususController@pdf')->name('pembayarankhusus.pdf');
-Route::get('/cetak-data','PembayaranKhususController@pdfall')->name('pembayarankhusus.pdfall');
+Route::get('/cetak-data-pembayaran-khusus','PembayaranKhususController@pdfall')->name('pembayarankhusus.pdfall');
 
 Route::get('/pembayarankhusus-pdf', 'PembayaranKhususkController@pdf')->name('datadenda.pdf');

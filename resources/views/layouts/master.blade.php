@@ -57,7 +57,7 @@
     } --}}
   </style>
 </head>
-<body class="hold-transition skin-blue sidebar-mini">
+<body class="hold-transition skin-green sidebar-collapse sidebar-mini">
 <div class="wrapper">
 
   @include('layouts.header')
