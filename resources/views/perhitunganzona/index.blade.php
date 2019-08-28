@@ -22,7 +22,7 @@
 
 <div class="box">
 			<div class="box-header">
-			  <h3 class="box-title">Data Table With Full Features</h3>
+			  <h3 class="box-title">Data Perhitungan Zona</h3>
 
 			  <a style="margin-left: 5px;" class="btn btn-default pull-right" href=""><i class="fa fa-print"></i></a>
 

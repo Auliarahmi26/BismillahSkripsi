@@ -4,9 +4,7 @@
 <!-- DataTables -->
   <link rel="stylesheet" href="../../bower_components/datatables.net-bs/css/dataTables.bootstrap.min.css">
 @endsection
-@section ('content')
-
-
+@section('content')
 
 	<!-- Content Header (Page header) -->
 	<section class="content-header">
@@ -22,9 +20,9 @@
 
 <div class="box">
 			<div class="box-header">
-			  <h3 class="box-title">Data Table With Full Features</h3>
+			  <h3 class="box-title">Data Perhitungan Khusus</h3>
 
-			  <a style="margin-left: 5px;" class="btn btn-default pull-right" href=""><i class="fa fa-print"></i></a>
+			  <a style="margin-left: 5px;" target="_blank" class="btn btn-default pull-right" href="{{ route('perhitungankhusus.pdfall') }}"><i class="fa fa-print"></i></a>
 
 			</div>
 			<!-- /.box-header -->
@@ -77,17 +75,17 @@
 					@else
 					<td>Sudah Dibayar</td>
 					@endif
-					<td width="114px"> <a class="btn btn-success btn-sm" href="{{ route('perhitungankhusus.edit', $perhitungankhusus) }}"><i class="fa fa-info"></i></a>
+					<td width="94px"> <a class="btn btn-success btn-xs" href="{{ route('perhitungankhusus.edit', $perhitungankhusus) }}"><i class="fa fa-info"></i></a>
 					  {{-- gasan delete --}}
 						<div class="pull-right">
 						  <form action="{{ route('perhitungankhusus.destroy', $perhitungankhusus) }}" method="POST">
 							{{ csrf_field() }}
 							{{ method_field('DELETE') }}
-							<button class="btn btn-danger btn-sm" type="submit"><i class="fa fa-trash"></i></button>
+							<button class="btn btn-danger btn-xs" type="submit"><i class="fa fa-trash"></i></button>
 						  </form>
 						</div>
-						<a class="btn btn-primary btn-sm" href="{{ route('perhitungankhusus.bayar', $perhitungankhusus->id) }}"><i class="fa fa-check"></i></a>
-						<a class="btn btn-warning btn-sm" href="{{ route('perhitungankhusus.pdf', $perhitungankhusus->id) }}"><i class="fa fa-print" ></i></a>
+						<a class="btn btn-primary btn-xs" href="{{ route('perhitungankhusus.bayar', $perhitungankhusus->id) }}"><i class="fa fa-check"></i></a>
+						<a class="btn btn-warning btn-xs" target="_blank" href="{{ route('perhitungankhusus.pdf', $perhitungankhusus->id) }}"><i class="fa fa-print" ></i></a>
 					</td> 
 
 				</tr>

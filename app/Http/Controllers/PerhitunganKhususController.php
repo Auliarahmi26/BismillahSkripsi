@@ -107,6 +107,14 @@ class PerhitunganKhususController extends Controller
         return $pdf->stream();
     }
 
+    public function pdfall()
+    {
+        $perhitunganKhususes = PerhitunganKhusus::all();
+        $pdf = PDF::loadView('perhitungankhusus.pdfall', compact('perhitunganKhususes'));
+        $pdf->setPaper('a4', 'landscape');
+        return $pdf->stream();
+    }
+
 
 }
    

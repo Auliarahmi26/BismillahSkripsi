@@ -20,9 +20,9 @@
 
 <div class="box">
 			<div class="box-header">
-			  <h3 class="box-title">Data Table With Full Features</h3>
+			  <h3 class="box-title">Data Pembayaran Khusus</h3>
 
-			  <a style="margin-left: 5px;" class="btn btn-default pull-right" href="{{ route('pembayarankhusus.pdfall') }}"><i class="fa fa-print"></i></a>
+			  <a style="margin-left: 5px;" target="_blank" class="btn btn-default pull-right" href="{{ route('pembayarankhusus.pdfall') }}"><i class="fa fa-print"></i></a>
 			  <a style="margin-left: 5px;" class="btn btn-success pull-right" href="{{Route('pembayarankhusus.filter')}}"><i class="fa fa-print"></i> Periode</a>
 			</div>
 			<!-- /.box-header -->
@@ -73,7 +73,7 @@
 					<td>{{ $perhitungankhusus -> tarif }}</td>
 					<td>{{ $total }}</td>
 					<td>{{ $perhitungankhusus -> updated_at->format('d F Y') }}</td>
-					<td><a class="btn btn-warning btn-sm" href="{{ route('pembayarankhusus.pdf', $perhitungankhusus->id) }}"><i class="fa fa-print" ></i></a></td>
+					<td><a class="btn btn-warning btn-xs" target="_blank" href="{{ route('pembayarankhusus.pdf', $perhitungankhusus->id) }}"><i class="fa fa-print" ></i></a></td>
 				</tr>
 				
 				@endforeach

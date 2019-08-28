@@ -23,7 +23,7 @@ data jenis reklame
 
 <div class="box">
             <div class="box-header">
-              <h3 class="box-title">Data Table With Full Features</h3>
+              <h3 class="box-title">Data Jenis Reklame</h3>
 
               <a style="margin-left: 5px;" class="btn btn-default pull-right" href="{{ route('wajibpajak.pdf') }}"><i class="fa fa-print"></i></a>
               <a style="margin-left: 5px;" class="btn btn-primary pull-right" href="{{ route('wajibpajak.create') }}"><i class="fa fa-plus"></i></a>
